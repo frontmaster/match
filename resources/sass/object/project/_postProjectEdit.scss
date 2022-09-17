@@ -1,0 +1,201 @@
+.p-postProjectEdit {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    &__modal {
+        width: 400px;
+        height: 200px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 30%;
+        left: 10%;
+        z-index: 1;
+        display: none;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-radius: 10px;
+        &--cover {
+            background-color: $shadow;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    }
+    &__sentence{
+        text-align: center;
+    }
+    &__title {
+        text-align: center;
+        color: $black;
+        font-size: $font-size_xxl;
+        margin-bottom: $space_xl;
+    }
+    &__content {
+        width: 700px;
+    }
+    &__form {
+        width: 100%;
+        &--modal {
+            display: flex;
+            justify-content: center;
+            margin-top: $space_xl;
+        }
+    }
+    &__formContainer {
+        width: 100%;
+
+        border-radius: 10px;
+        padding: $space_xl;
+        background-color: $white;
+    }
+    &__errMsg {
+        display: block;
+        margin-bottom: $space_m;
+    }
+    &__part {
+        display: flex;
+        flex-direction: column;
+        margin-top: $space_xxl;
+        &--price {
+            display: flex;
+            flex-direction: column;
+            margin-top: $space_xxl;
+            display: none;
+        }
+    }
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $space_s;
+        color: $black;
+        font-weight: bold;
+    }
+    &__priceContainer {
+        display: flex;
+    }
+    &__pricePart {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    &__require {
+        margin-right: 580px;
+        background-color: $alart-color;
+        color: $white;
+        padding: $space_s;
+        width: 35px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size_m;
+    }
+    &__input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        &--price {
+            width: 100%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+        }
+        &--revenue {
+            width: 50%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+        }
+    }
+    &__priceTitle {
+        font-size: $font-size_m;
+        color: $main-color;
+        font-weight: bold;
+    }
+    &__tilde {
+        display: flex;
+        align-items: center;
+        margin-left: $space_s;
+        margin-right: $space_s;
+    }
+    &__priceUnit {
+        display: flex;
+        line-height: 80px;
+        margin-left: $space_m;
+        &--revenue {
+            line-height: 30px;
+            margin-left: $space_s;
+        }
+    }
+    &__countArea {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__select {
+        width: 40%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+    }
+    &__textarea {
+        border: 1px solid $main-color;
+        border-radius: 3px;
+    }
+    &__button {
+        text-align: right;
+        margin-top: $space_l;
+        &--disabled {
+            display: flex;
+            justify-content: center;
+            margin-top: $space_l;
+        }
+    }
+    &__btn {
+        background-color: $main-color;
+        color: $white;
+        opacity: 0.9;
+        &:hover {
+            opacity: 1;
+        }
+        &--disabled {
+            width: 600px;
+            border-radius: 30px;
+            background-color: $shadow;
+            color: $black;
+            font-weight: bold;
+            pointer-events: none;
+            font-size: $font-size_l;
+        }
+        &--cancel{
+            background-color: $main-color;
+            color: $white;
+            margin-right: $space_xl;
+            opacity: 0.9;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        &--delete{
+            background-color: $alart-color;
+            color: $white;
+            opacity: 0.9;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}

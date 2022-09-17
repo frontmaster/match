@@ -1,0 +1,193 @@
+.p-postProject{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    @include mq(){
+        flex-direction: column-reverse;
+    }
+    &__title{
+        text-align: center;
+        color: $black;
+        font-size: $font-size_xxl;
+        margin-bottom: $space_xl;
+    }
+    &__content{
+        width: 700px;
+        @include mq("xl"){
+            width: 74%;
+            padding: $space_l;
+            box-sizing: border-box;
+        }
+        @include mq("lg"){
+            width: 70%;
+            padding: $space_m;
+            box-sizing: border-box;
+        }
+        @include mq(){
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: $space_m;
+            box-sizing: border-box;
+        }
+    }
+    &__form{
+        width: 100%;
+        
+    }
+    &__formContainer{
+        width: 100%;
+        border-radius: 10px;
+        padding: $space_xl;
+        box-sizing: border-box;
+        background-color: $white;
+    }
+    &__errMsg{
+        display: block;
+        margin-bottom: $space_m;
+    }
+    &__part{
+        display: flex;
+        flex-direction: column;
+        margin-top: $space_xxl;
+        &--price{
+            display: flex;
+            flex-direction: column;
+            margin-top: $space_xxl;
+            display:none;
+        }
+    }
+    &__labelContainer{
+        display: flex;
+        align-items: center;
+    }
+    &__label{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $space_s;
+        color: $black;
+        font-weight: bold;
+        width: 100%;
+    }
+    &__priceContainer{
+        display: flex;
+        
+    }
+    &__pricePart{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    &__require{
+        margin-right: 510px;
+        margin-bottom: $space_s;
+        background-color: $alart-color;
+        color: $white;
+        padding: $space_s;
+        width: 180px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size_m;
+        @include mq("xl"){
+            margin-right: 530px;
+            width: 180px;
+        }
+        @include mq("lg"){
+            margin-right: 350px;
+            width: 160px;
+        }
+        @include mq(){
+            position: absolute;
+            left: 30%;
+            width: 40px;
+        }
+        @include mq("ss"){
+            position: absolute;
+            left: 40%;
+            width: 40px;
+        }
+    }
+    &__input{
+        width: 100%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        &--price{
+            width: 100%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+            @include mq("ss"){
+                font-size: 10px;
+            }
+        }
+        &--revenue{
+            width: 50%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+        }
+    }
+    &__priceTitle{
+        font-size: $font-size_m;
+        color: $main-color;
+        font-weight: bold;
+    }
+    &__tilde{
+        display: flex;
+        align-items: center;
+        margin-left: $space_s;
+        margin-right: $space_s;
+    }
+    &__priceUnit{
+        display: flex;
+        line-height: 80px;
+        margin-left: $space_m;
+        @include mq("ss"){
+            font-size: 10px;
+        }
+        &--revenue{
+            line-height: 30px;
+            margin-left: $space_s;
+        }
+    }
+    &__countArea{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__select{
+        width: 40%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        @include mq("ss"){
+            width: 100%;
+        }
+    }
+    &__textarea{
+        border: 1px solid $main-color;
+        border-radius: 3px;
+    }
+    &__button{
+        text-align: right;
+        margin-top: $space_l;
+    }
+    &__btn{
+        background-color: $main-color;
+        color: $white;
+        opacity: 0.9;
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+
+    
+}

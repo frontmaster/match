@@ -1,0 +1,16 @@
+.l-footer {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    background-color: $main_color;
+    color: $white;
+    @include mq() {
+        height: 60px;
+    }
+    @include mq("sm") {
+        font-size: $font-size_s;
+    }
+}

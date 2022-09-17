@@ -1,0 +1,54 @@
+.c-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq() {
+        margin-top: $space_m;
+    }
+    &__item.active{
+        padding: $space_s;
+        box-sizing: border-box;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $main-color;
+        margin: $space_s;
+        font-size: $font-size_m;
+        @include mq("ss"){
+            width: 30px;
+            height: 30px;
+        }
+    }
+    &__item.active &__item--link {  
+        color: $white;
+    }
+    &__item.disabled {
+        color: $gray;
+    }
+    &__item {
+        padding: $space_s;
+        box-sizing: border-box;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $silver;
+        color: $font-color_default;
+        margin: $space_s;
+        font-size: $font-size_m;
+        @include mq("ss"){
+            width: 30px;
+            height: 30px;
+        }
+        &--link{
+            @include mq(){
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+

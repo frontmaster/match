@@ -1,0 +1,83 @@
+.c-sidebar {
+    &__menublock {
+        margin-bottom: $space_3l;
+        width: 100%;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        @include mq("ss") {
+            font-size: $font-size_m;
+        }
+        &--short {
+            margin-bottom: $space_3l;
+            width: 100%;
+            
+            border-radius: 5px;
+            @include mq("ss") {
+                font-size: $font-size_m;
+            }
+        }
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-top: solid 1px $base-color;
+        border-radius: 5px;
+        background-color: $white;
+        @include mq() {
+            width: 100%;
+        }
+        &--short {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-bottom: $space_xl;
+            border: solid 2px $main-color;
+            border-radius: 5px;
+            height: 40px;
+            background-color: $white;
+            @include mq() {
+                width: 100%;
+            }
+        }
+        &--mid {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-bottom: solid 1px $white;
+            border-radius: 5px;
+            padding: $space_m;
+            box-sizing: border-box;
+            height: 60px;
+            background-color: $main-color;
+            @include mq() {
+                width: 100%;
+            }
+        }
+        &--title {
+            font-size: $font-size_l;
+            color: $black;
+            font-weight: bold;
+            margin-bottom: $space_s;
+            margin-top: $space_s;
+            @include mq("ss") {
+                font-size: $font-size_m;
+            }
+        }
+        &--link {
+            color: $main-color;
+            border-bottom: 1px solid $main-color;
+            padding: $space_m;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &--linkLast {
+            color: $main-color;
+            padding: $space_m;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

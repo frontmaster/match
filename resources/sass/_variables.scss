@@ -1,0 +1,58 @@
+//フォント
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-family-noto-sans-jp: "Noto Sans JP", sans-serif;
+$line-height-base: 1.5;
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_base: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_3l: 38px;
+
+// Colors
+$base-color: #f6f5f5;
+$main-color: #009854;
+$sub-color1: #98CE97;
+$sub-color2: #67BE8D;
+$accent-color: #68B7A1;
+$font-color_default: #444;
+$font-color_title: #4e4449;
+$alart-color: #d7003a;
+$white: #fff;
+$black: #2f2725;
+$shadow: #b8b8b8;
+$gray: #333;
+$gray-sub: #767676;
+$blue: #6C9BD2;
+$pink: #f29c9f;
+$silver: #ced1d3;
+$yellow: #fabf13;
+
+//width
+$site-width: 980px;
+
+//スペース
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+//レスポンシブデザイン用変数
+$breakpoints: (
+    "ss": "screen and (max-width: 280px)",
+    "sm": "screen and (max-width: 320px)",
+    "md": "screen and (max-width: 540px)",
+    "lg": "screen and (max-width: 768px)",
+    "xl": "screen and (max-width: 1024px)",
+    "xxl": "screen and (max-width: 1280px)",
+) !default;
+
+//mixin
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}

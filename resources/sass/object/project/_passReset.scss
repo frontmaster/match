@@ -1,0 +1,55 @@
+.p-passReset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__content{
+        background-color: $white;
+        border-radius: 10px;
+        padding: $space_xl;
+        height: 350px;
+    }
+    &__title{
+        text-align: center;
+        color: $black;
+        font-size: $font-size_xxl;
+        margin-top: $space_xxl;
+    }
+    &__sentence{
+        margin-top: $space_xxl;
+    }
+    &__form{
+        margin-top: $space_xxl;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    &__part{
+        display: flex;
+        align-items: center;
+    }
+    &__label{
+        margin-right: $space_l;
+    }
+    &__input{
+        width: 70%;
+        height: 30px;
+    }
+    &__button{
+        margin-top: $space_xxl;
+        text-align: right;
+        margin-right: $space_3l;
+    }
+    &__btn{
+        background-color: $main-color;
+        color: $white;
+    }
+    &__link{
+        display: block;
+        margin-top: $space_l;
+        text-align: right;
+        margin-right: $space_3l;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,165 @@
+.p-profile{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include mq("xl"){
+        flex-direction: column-reverse;
+    }
+    @include mq(){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    margin-top: 150px;
+    margin-bottom: 100px;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        @include mq("xl"){
+            width: 100%;
+            align-items: center;
+        }
+        @include mq(){
+            width: 95%;
+            align-items: center;
+        }
+    }
+    &__sidebarContainer{
+        @include mq("xl"){
+            width: 100%;
+        }
+    }
+    &__title{
+        text-align: center;
+        color: $black;
+        font-size: $font-size_xxl;
+        margin-bottom: $space_xl;
+    }
+    &__form{
+        background-color: $white;
+        border-radius: 10px;
+        padding: $space_xl;
+        box-sizing: border-box;
+        @include mq("xl"){
+            padding: 60px;
+            width: 95%;
+        }
+        @include mq("lg"){
+            padding: $space_3l;
+        }
+        @include mq(){
+            width: 100%;
+            padding: $space_xl;
+        }
+        @include mq("ss"){
+            padding: $space_xl;
+        }
+    }
+    &__part{
+        margin-top: $space_xxl;
+        &--img{
+            display: flex;
+            flex-direction: column;
+            margin-top: $space_xl;
+        }
+    }
+    &__label{
+        color: $black;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $space_s;
+        width: 48%;
+        @include mq("ss"){
+            width: 80%;
+        }
+    }
+    &__labelContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__requireContainer{
+        display: flex;
+        width: 80%;
+        margin-right: 45%;
+        @include mq(){
+            margin-right: 0%;
+        }
+    }
+    &__require{
+        background-color: $alart-color;
+        color: $white;
+        padding: $space_s;
+        width: 35px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size_m;
+        
+    }
+    &__imgContainer{
+        display: flex;
+        align-items: center;
+    }
+    &__img{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        @include mq(){
+            width: 22%;
+            height: 22%;
+        }
+        
+    }
+    &__input{
+        width: 100%;
+        height: 30px;
+        &--img{
+            opacity: 0;
+            position: absolute;
+            @include mq(){
+                width: 90%;
+            }
+        }
+    }
+    &__inputArea{
+        background-color: $main-color;
+        color: $white;
+        padding: $space_m;
+        border-radius: 5px;
+        position: relative;
+        opacity: 0.9;
+        margin-left: $space_xl;
+        &:hover{
+            opacity: 1;
+        }
+        @include mq(){
+            font-size: $font-size_m;
+        }
+        @include mq("ss"){
+            font-size: $font-size_s;
+            margin-left: $space_m;
+            padding: $space_s;
+        }
+    }
+    &__textarea{
+        width: 100%;
+    }
+    &__countArea{
+        text-align: right;
+        margin-top: $space_s;
+    }
+    &__button{
+        text-align: right;
+        margin-top: $space_l;
+    }
+    &__btn{
+        background-color: $main-color;
+        color: $white;
+        opacity: 0.9;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}

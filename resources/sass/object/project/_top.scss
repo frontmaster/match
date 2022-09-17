@@ -1,0 +1,396 @@
+.p-top {
+    background-color: $white;
+    width: 100%;
+    @include mq() {
+        display: flex;
+        flex-direction: column;
+    }
+    &__sentenceContainer {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 64px;
+        @include mq() {
+            width: 100%;
+        }
+        @include mq("ss"){
+            margin-top: 0;
+        }
+    }
+    &__sentence {
+        width: 100%;
+        text-align: center;
+        font-size: $font-size_xxl;
+        color: $main-color;
+        line-height: 2;
+        font-weight: bold;
+        @include mq("xl") {
+            font-size: 28px;
+        }
+        @include mq("lg") {
+            font-size: $font-size_xl;
+        }
+        @include mq() {
+            width: 100%;
+            font-size: $font-size_l;
+        }
+        @include mq("ss") {
+            font-size: $font-size_base;
+        }
+        &--small {
+            margin-top: $space_m;
+            color: $main-color;
+            line-height: 2;
+            text-align: center;
+            font-size: $font-size_l;
+            @include mq() {
+                width: 100%;
+            }
+        }
+        &--title {
+            color: $main-color;
+            line-height: 2;
+            text-align: center;
+            font-size: $font-size_xl;
+            font-weight: bold;
+            margin-top: $space_l;
+            @include mq() {
+                width: 100%;
+            }
+            @include mq("ss"){
+                font-size: $font-size_l;
+            }
+        }
+        &--content {
+            color: $black;
+            text-align: center;
+            font-size: $font-size_3l;
+            font-weight: bold;
+            @include mq("ss"){
+                font-size: $font-size_xxl;
+            }
+        }
+        &--panel {
+            line-height: 2;
+            text-align: center;
+            margin-top: $space_m;
+            @include mq("ss"){
+                font-size: 3px;
+            }
+        }
+        &--sub {
+            line-height: 2;
+            text-align: center;
+            padding: $space_l;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            @include mq() {
+                width: 100%;
+            }
+        }
+    }
+    &__imgContainer {
+        width: 100%;
+        //height: 530px;
+        padding: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        &--panel {
+            width: 90%;
+            
+            
+        }
+        @include mq("xl") {
+            padding: $space_xl;
+        }
+        @include mq() {
+            display: flex;
+            flex-direction: column-reverse;
+            padding: 25px;
+            margin-top: 80px;
+        }
+    }
+    &__img {
+        width: 40%;
+        height: 50%;
+        @include mq() {
+            width: 100%;
+        }
+        &--panel {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__link {
+        display: block;
+        text-align: center;
+        background-color: $main-color;
+        color: $white;
+        border-radius: 30px;
+        width: 300px;
+        height: 40px;
+        line-height: 40px;
+        padding: $space_m;
+        
+        @include mq() {
+            width: 60%;
+            height: 30px;
+            line-height: 30px;
+        }
+        @include mq("ss"){
+            width: 80%;
+        }
+        &:hover {
+            opacity: 1;
+        }
+        &--sub {
+            display: block;
+            text-align: center;
+            background-color: $main-color;
+            color: $white;
+            border-radius: 30px;
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            padding: $space_m;
+            margin-top: $space_m;
+            margin-bottom: 100px;
+            &:hover {
+                opacity: 1;
+            }
+            @include mq() {
+                margin-top: 0;
+                width: 60%;
+                height: 30px;
+                line-height: 30px;
+            }
+            @include mq("ss"){
+                width: 80%;
+            }
+        }
+    }
+    &__content {
+        background-color: $main-color;
+        display: flex;
+        flex-direction: column;
+        padding: $space_3l;
+        box-sizing: border-box;
+        @include mq("xl") {
+            padding: $space_xxl;
+        }
+        @include mq() {
+            width: 100%;
+            height: 40%;
+            padding: $space_xxl;
+        }
+        &--sub {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include mq("xl"){
+                padding: $space_l;
+            }
+            @include mq() {
+                width: 100%;
+                padding: $space_m;
+                box-sizing: border-box;
+            }
+        }
+    }
+    &__title {
+        font-size: $font-size_xxl;
+        color: $white;
+        padding: $space_xl;
+        font-weight: bold;
+        text-align: center;
+        @include mq("ss") {
+            font-size: $font-size_l;
+        }
+        &--sub {
+            font-size: $font-size_xxl;
+            color: $main-color;
+            text-align: center;
+            margin-top: $space_3l;
+            margin-right: $space_m;
+            margin-left: $space_m;
+            @include mq() {
+                font-size: 23px;
+            }
+            @include mq("ss"){
+                font-size: $font-size_l;
+            }
+        }
+    }
+    &__titleContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mq() {
+            width: 100%;
+        }
+    }
+    &__panelContent {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $space_3l;
+        @include mq("xl") {
+            flex-direction: column;
+            align-items: center;
+        }
+        @include mq() {
+            flex-direction: column;
+        }
+    }
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $white;
+        width: 370px;
+        padding: $space_l;
+        border-radius: 5px;
+        box-sizing: border-box;
+        position: relative;
+        @include mq("xl") {
+            width: 80%;
+            height: 80%;
+            margin-bottom: $space_3l;
+        }
+        @include mq("lg") {
+            width: 80%;
+            height: 80%;
+        }
+        @include mq() {
+            width: 100%;
+            height: 100%;
+            margin-bottom: $space_xl;
+        }
+        @include mq("ss"){
+            height: 300px;
+        }
+
+        &--title {
+            text-align: center;
+            font-size: $font-size_xl;
+            color: $black;
+            @include mq("xl") {
+                font-size: $font-size_m;
+                font-weight: bold;
+            }
+            @include mq("ss") {
+                font-size: $font-size_s;
+                font-weight: bold;
+            }
+        }
+        &--img {
+            width: 40%;
+            height: 35%;
+            margin-top: $space_xl;
+            margin-bottom: $space_xl;
+        }
+        &--sentence {
+            @include mq("ss") {
+                font-size: $font-size_s;
+            }
+        }
+    }
+    &__number {
+        color: $main-color;
+        font-weight: bold;
+        font-size: $font-size_xxl;
+        z-index: 1;
+        position: absolute;
+    }
+    &__border {
+        border: 2px solid $main-color;
+        width: 40px;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        &--title {
+            border-bottom: 1px solid $main-color;
+            width: 80px;
+            margin-top: $space_3l;
+            @include mq() {
+                width: 30px;
+            }
+            @include mq("ss"){
+                width: 18px;
+            }
+        }
+    }
+    &__itemContent {
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__itemContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: $space_xxl;
+        box-sizing: border-box;
+        width: 100%;
+        &::after {
+            display: block;
+            content: "";
+            width: 360px;
+        }
+        @include mq("xl") {
+            justify-content: space-around;
+        }
+        @include mq("lg") {
+            &::after {
+                width: 320px;
+            }
+        }
+        @include mq("ss") {
+            width: 100%;
+        }
+    }
+    &__item {
+        width: 360px;
+        border: 2px solid $sub-color2;
+        border-radius: 5px;
+        padding: $space_l;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        &--footer {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        @include mq("lg") {
+            width: 320px;
+        }
+        @include mq("ss") {
+            width: 100%;
+        }
+    }
+    &__label {
+        color: $sub-color2;
+        font-weight: bold;
+        display: block;
+        margin-top: $space_m;
+    }
+    &__btn {
+        background-color: $sub-color2;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
+        @include mq("sm") {
+            width: 100px;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

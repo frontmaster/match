@@ -1,0 +1,163 @@
+.p-applyProjectList{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    @include mq("xl"){
+        flex-direction: column-reverse;
+    }
+    @include mq(){
+        flex-direction: column-reverse;
+    }
+    &__sidebarContainer{
+        @include mq("xl"){
+            width: 100%;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        width: 700px; 
+        @include mq("xl"){
+            width: 100%;
+            align-items: center;
+            margin-top: 100px;
+        }
+        @include mq(){
+            width: 100%;
+            margin-top: 100px;
+            align-items: center;
+        }
+    }
+    &__title{
+        color: $black;
+        font-size: $font-size_xxl;
+        text-align: center;
+        padding: $space_l;
+        box-sizing: border-box;
+    }
+    &__container{
+        background-color: $white;
+        width: 700px;
+        padding: $space_l;
+        border-radius: 10px;
+        box-sizing: border-box;
+        @include mq("xl"){
+            width: 95%;
+        }
+        @include mq(){
+            width: 100%;
+        }
+    }
+    &__partContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include mq(){
+            flex-direction: column;
+        }
+        &::after{
+            content: "";
+            width: 200px;
+            @include mq(){
+                content: none;
+            }
+        }
+    }
+    &__part{
+        margin-bottom: $space_l;
+    }
+    
+    &__item{
+        border: 2px solid $main-color;
+        display: flex;
+        flex-direction: column;
+        border-radius: 3px;
+        width: 200px;
+        padding: $space_m;
+        box-sizing: border-box;
+        align-items: flex-start;
+        @include mq(){
+            width: 100%;
+        }
+    }
+    &__label{
+        color: $black;
+        font-weight: bold;
+        margin-top: $space_m;
+    }
+    &__priceContainer{
+        display: flex;
+    }
+    &__searchBox{
+        margin-bottom: $space_l;
+    }
+    &__searchContainer{
+        display: flex;
+        align-items: center;
+        @include mq("ss"){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__category{
+        border: 2px solid $font-color_default;
+        border-radius: 3px;
+        height: 32px;
+    }
+    &__input{
+        height: 27px;
+        width: 100%;
+        border: 2px solid $font-color_default;
+        border-radius: 3px;
+        margin-left: $space_m;
+        @include mq("xl"){
+            width: 100%;
+        }
+        @include mq("ss"){
+            margin-left: 0px;
+            margin-top: $space_m;
+        }
+    }
+    &__searchIcon{
+        position: absolute;
+        right: 34%;
+        @include mq("xxl"){
+            right: 11%;
+        }
+        @include mq("xl"){
+            right: 5%;
+        }
+        @include mq(){
+            right: 6%;
+        }
+        @include mq("ss"){
+            top: 21%;
+            right: 5%;
+        }
+    }
+    &__link{
+        background-color: $main-color;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 35px;
+        margin-top: $space_l;
+        opacity: 0.9;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    &__sentence{
+        margin-top: $space_l;
+        width: 700px;
+        background-color: $white;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-radius: 10px;
+        @include mq(){
+            width: 95%;
+        }
+    }
+}

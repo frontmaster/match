@@ -1,0 +1,7 @@
+.c-errMsg{
+    color: $alart-color;
+    @include mq() {
+        font-size: $font-size_m;
+    }
+
+}

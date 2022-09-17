@@ -1,0 +1,380 @@
+.p-projectDetail {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    @include mq("xl"){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    @include mq(){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    &__sidebarContainer{
+        @include mq("xl"){
+            width: 100%;
+        }
+    }
+    &__modal {
+        width: 400px;
+        height: 200px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 30%;
+        left: 5%;
+        z-index: 1;
+        display: none;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-radius: 10px;
+        &--cover {
+            background-color: $shadow;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    }
+    &__sentence {
+        &--modal {
+            text-align: center;
+            margin-top: $space_xl;
+        }
+    }
+    &__title {
+        text-align: center;
+        color: $black;
+        font-size: $font-size_xxl;
+        margin-bottom: $space_xl;
+        @include mq("ss"){
+            font-size: $font-size_xl;
+        }
+    }
+    &__content {
+        width: 700px;
+        @include mq("xl"){
+            width: 95%;
+        }
+        @include mq(){
+            width: 95%;
+        }
+    }
+    &__form {
+        width: 100%;
+        &--modal {
+            display: flex;
+            justify-content: center;
+            margin-top: $space_xl;
+        }
+    }
+    &__formContainer {
+        width: 100%;
+        border-radius: 10px;
+        padding: $space_xl;
+        background-color: $white;
+        margin-bottom: $space_3l;
+        box-sizing: border-box;
+    }
+    &__errMsg {
+        display: block;
+        margin-bottom: $space_m;
+    }
+    &__part {
+        display: flex;
+        flex-direction: column;
+        margin-top: $space_xxl;
+        &--price {
+            display: flex;
+            flex-direction: column;
+            margin-top: $space_xxl;
+            //display:none;
+        }
+    }
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $space_s;
+        color: $black;
+        font-weight: bold;
+    }
+    &__img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    &__postUserInfo {
+        &--msg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__postUserName {
+        margin-left: $space_m;
+        margin-top: $space_xl;
+    }
+    &__applyUserName {
+        margin-left: $space_m;
+    }
+    &__priceContainer {
+        display: flex;
+    }
+    &__pricePart {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    &__require {
+        margin-right: 580px;
+        background-color: $alart-color;
+        color: $white;
+        padding: $space_s;
+        width: 35px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size_m;
+    }
+    &__input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        &--price {
+            width: 100%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+        }
+        &--revenue {
+            width: 50%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+        }
+        &--select {
+            width: 20%;
+            height: 30px;
+            border: 1px solid $main-color;
+            border-radius: 3px;
+            @include mq("ss"){
+                width: 30%;
+            }
+        }
+    }
+    &__priceTitle {
+        font-size: $font-size_m;
+        color: $main-color;
+        font-weight: bold;
+    }
+    &__tilde {
+        display: flex;
+        align-items: center;
+        margin-left: $space_s;
+        margin-right: $space_s;
+    }
+    &__priceUnit {
+        display: flex;
+        line-height: 80px;
+        margin-left: $space_m;
+        &--revenue {
+            line-height: 30px;
+            margin-left: $space_s;
+        }
+    }
+    &__countArea {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__select {
+        width: 40%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+    }
+    &__textarea {
+        border: 1px solid $main-color;
+        border-radius: 3px;
+    }
+    &__button {
+        text-align: right;
+        margin-top: $space_l;
+        &--disabled {
+            display: flex;
+            justify-content: center;
+            margin-top: $space_l;
+        }
+        &--withdrawUser{
+            display: flex;
+            justify-content: center;
+            margin-top: $space_l;
+        }
+    }
+    &__buttonContainer {
+        display: flex;
+        justify-content: right;
+        &--disabled{
+            display: flex;
+            justify-content: center;
+            @include mq(){
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+        &--withdrawUser{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__likeContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: $space_m;
+        margin-left: $space_l;
+        @include mq(){
+            align-items: flex-end;
+        }
+    }
+    &__heartContainer {
+        display: flex;
+    }
+    &__likeMsg{
+        font-size: $font-size_m;
+    }
+    &__btn {
+        background-color: $main-color;
+        color: $white;
+        opacity: 0.9;
+        &:hover {
+            opacity: 1;
+        }
+        &--cancel {
+            background-color: $alart-color;
+            color: $white;
+            opacity: 0.9;
+            margin-right: $space_xl;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &--apply {
+            background-color: $main-color;
+            color: $white;
+            opacity: 0.9;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &--disabled {
+            width: 370px;
+            border-radius: 30px;
+            background-color: $shadow;
+            color: $black;
+            font-weight: bold;
+            pointer-events: none;
+            font-size: $font-size_l;
+            @include mq("ss"){
+                font-size: $font-size_m;
+            }
+        }
+        &--good {
+            color: $gray-sub;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: $space_s;
+        }
+    }
+    .best {
+        color: $pink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: $space_s;
+    }
+    &__msgContainer {
+        width: 100%;
+        background-color: $blue;
+        border-radius: 10px;
+        padding: $space_xl;
+        margin-bottom: $space_3l;
+        box-sizing: border-box;
+    }
+    &__msg {
+        width: 100%;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+    }
+    &__postUserInfo {
+        display: flex;
+        flex-direction: column;
+    }
+    &__msgPart {
+        &--left {
+            display: flex;
+            align-items: center;
+            margin-bottom: $space_l;
+        }
+        &--right {
+            text-align: right;
+            margin-bottom: $space_l;
+        }
+    }
+    &__msg {
+        &--left {
+            display: inline-block;
+            position: relative;
+            margin: 25px 0 0 50px;
+            padding: 10px;
+            max-width: 250px;
+            border-radius: 12px;
+            background-color: $white;
+            &:after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 3px;
+                left: -19px;
+                border: 8px solid transparent;
+                border-right: 18px solid $white;
+                -webkit-transform: rotate(35deg);
+                transform: rotate(35deg);
+            }
+        }
+        &--right {
+            display: inline-block;
+            position: relative;
+            margin: 0 10px 0 0;
+            padding: 10px;
+            text-align: left;
+            max-width: 250px;
+            border-radius: 12px;
+            background-color: $sub-color2;
+            &:after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 3px;
+                right: -19px;
+                border: 8px solid transparent;
+                border-left: 18px solid $sub-color2;
+                -webkit-transform: rotate(-35deg);
+                transform: rotate(-35deg);
+            }
+        }
+    }
+}

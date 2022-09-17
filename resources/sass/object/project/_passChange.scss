@@ -1,0 +1,43 @@
+.p-passChange{
+    display: flex;
+    justify-content: center;
+    &__content{
+        background-color: $white;
+        padding: $space_xl;
+        border-radius: 10px;
+    }
+    &__title{
+        color: $black;
+        font-size: $font-size_xxl;
+        text-align: center;
+        margin-bottom: $space_xxl;
+    }
+    &__form{
+        margin-top: $space_l;
+    }
+    &__part{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $space_l;
+    }
+    &__label{
+        color: $black;
+        font-weight: bold;
+    }
+    &__input{
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 5px;
+    }
+    &__button{
+        text-align: right;
+    }
+    &__btn{
+        background-color: $main-color;
+        color: $white;
+        opacity: 0.9;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}

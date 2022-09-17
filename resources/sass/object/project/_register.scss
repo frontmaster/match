@@ -1,0 +1,106 @@
+.p-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    &__content{
+        background-color: $white;
+        width: 600px;
+        height: 480px;
+        padding: $space_xl;
+        border-radius: 10px;
+        box-sizing: border-box;
+        @include mq("lg"){
+            width: 95%;
+            height: auto;
+        }
+        @include mq(){
+            width: 95%;
+        }
+    }
+    &__title{
+        text-align: center;
+        color: $black;
+        font-size: $font-size_xxl;
+        margin-top: $space_l;
+    }
+    &__form{
+        margin-top: $space_3l;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    &__part{
+        margin-bottom: $space_xxl;
+        margin-top: $space_m;
+        display: flex;
+        align-items: center;
+        @include mq("lg"){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include mq(){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &--name{
+            margin-bottom: $space_xxl;
+            display: flex;
+            align-items: center;
+            display: none;
+        }
+    }
+    &__inputContainer{
+        margin-left: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @include mq("lg"){
+            justify-content: flex-start;
+            margin-left: 0px;
+        }
+        @include mq(){
+            justify-content: flex-start;
+        }
+        @include mq("ss"){
+            margin-left: 10px;
+        }
+    }
+    &__input{
+        width: 100%;
+        height: 30px;
+    }
+    &__label{
+        width: 180px;
+        color: $black;
+        @include mq(){
+            display: block;
+        }
+    }
+    &__require{
+        margin-right: $space_m;
+        background-color: $alart-color;
+        color: $white;
+        padding: $space_s;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: $font-size_m;
+        @include mq("ss"){
+            width: 60px;
+        }
+    }
+    &__button{
+        text-align: right;
+        margin-top: $space_l;
+    }
+    &__btn{
+        background-color: $main-color;
+        color: $white;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
