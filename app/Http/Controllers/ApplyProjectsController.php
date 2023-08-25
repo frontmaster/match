@@ -21,7 +21,7 @@ class ApplyProjectsController extends Controller
         $postProjectID = $applyProject->postProject->id;
         $user_id = auth()->user()->id;
         $directMessages = DirectMessage::all();
-        //dd($postProjectID);
+    
         return view('pages.applyProjectDetail', compact('applyProject', 'applyUserImg', 'applyUserName', 'applyProjectID', 'directMessages', 'user_id', 'postProjectID'));
     }
 
