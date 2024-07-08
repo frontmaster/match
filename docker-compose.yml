@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: replace_match
+    volumes:
+      - ./replace-match/:/var/www/replace-match
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+      - "5173:5173"
+    working_dir: /var/www/replace-match
+    environment:
+      - "DB_HOST=mysql"
+      - "DB_PORT=3306"
+      - "DB_DATABASE=replace_match"
+      - "DB_USERNAME=root"
+      - "DB_PASSWORD=secret"
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./:/var/www
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_db
+    environment:
+      - "MYSQL_DATABASE=replace_match"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+      - MYSQL_ROOT_PASSWORD=secret
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+volumes:
+  mysql_data:
