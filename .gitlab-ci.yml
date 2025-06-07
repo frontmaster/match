@@ -1,41 +1,29 @@
 stages:
-  - up_app
-  - zap_scan
+  - test
 
-up_app:
-  stage: up_app
-  image: docker/compose:1.29.2
-  services:
-    - docker:dind
-  variables:
-    DOCKER_HOST: tcp://docker:2375
-  script:
-    - docker-compose -f docker-compose.yml up -d
-    - echo "Waiting for app to start..."
-    - |
-      for i in {1..30}; do
-        if wget --spider --timeout=2 http://localhost:80; then
-          echo "App is up!"
-          break
-        fi
-        echo "Waiting..."
-        sleep 2
-      done
+variables:
+  COMPOSE_PROJECT_NAME: zapci
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_TLS_CERTDIR: ""  # docker:dind でTLS無効化
+
+services:
+  - docker:dind
 
 zap_scan:
-  stage: zap_scan
-  image: zaproxy/zap-stable
-  services:
-    - name: nginx-web
-      alias: nginx-web
-  before_script:
-    - mkdir -p /zap/wrk
-    - chmod 777 /zap/wrk
+  stage: test
+  image: docker/compose:1.29.2
   script:
-    - zap-baseline.py -t http://nginx-web -r zap-report.html || true
+    # 1. Laravel環境をComposeで起動
+    - docker-compose up -d
+    # 2. 起動待機（環境により調整。必要ならヘルスチェック実装推奨）
+    - echo "Waiting for containers to be ready..."
+    - sleep 30
+    # 3. ZAPをアプリに向けて実行
+    - docker run --network ${COMPOSE_PROJECT_NAME}_default \
+        -v $PWD:/zap/wrk:rw \
+        zaproxy/zap-stable zap-baseline.py \
+        -t http://nginx -r zap-report.html || true
   artifacts:
     paths:
       - zap-report.html
     expire_in: 1 week
-
-
