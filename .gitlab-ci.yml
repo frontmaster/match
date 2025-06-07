@@ -25,15 +25,17 @@ up_app:
 zap_scan:
   stage: zap_scan
   image: zaproxy/zap-stable
-  dependencies:
-    - up_app
+  services:
+    - name: nginx-web
+      alias: nginx-web
   before_script:
     - mkdir -p /zap/wrk
     - chmod 777 /zap/wrk
   script:
-    - zap-baseline.py -t http://host.docker.internal:80 -r zap-report.html || true
+    - zap-baseline.py -t http://nginx-web -r zap-report.html || true
   artifacts:
     paths:
       - zap-report.html
     expire_in: 1 week
+
 
