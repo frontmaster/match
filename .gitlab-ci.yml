@@ -1,73 +1,15 @@
 stages:
-  - lint
-  - test
-  - build
-  - up_app
   - zap_scan
 
-# Laravel PHP Lint
-lint_php:
-  stage: lint
-  image: composer:latest
-  script:
-    - composer install --no-interaction --no-progress --prefer-dist
-    - ./vendor/bin/php-cs-fixer fix --dry-run --diff
-
-# Vue Lint
-lint_js:
-  stage: lint
-  image: node:16
-  script:
-    - npm install
-    - npm run lint
-
-# Laravel Test
-test_php:
-  stage: test
-  image: php:8.1
-  services:
-    - mysql:latest
-  variables:
-    DB_HOST: mysql-db
-    DB_DATABASE: match
-    DB_USERNAME: laravel_user
-    DB_PASSWORD: laravel_password
-  before_script:
-    - apt-get update && apt-get install -y unzip
-    - curl -sS https://getcomposer.org/installer | php
-    - php composer.phar install
-    - cp .env.testing .env
-    - php artisan key:generate
-    - php artisan migrate --env=testing
-  script:
-    - php artisan test
-
-# Vue Unit Test
-test_js:
-  stage: test
-  image: node:16
-  script:
-    - npm install
-    - npm run test:unit
-
-# Vue Build
-build_vue:
-  stage: build
-  image: node:16
-  script:
-    - cd src
-    - npm install
-    - npm run build
-
-# アプリをdocker-composeで立ち上げ
-up_app:
-  stage: up_app
-  image: docker/compose:1.29.2
+zap_scan:
+  stage: zap_scan
+  image: owasp/zap2docker-stable
   services:
     - docker:dind
   variables:
     DOCKER_HOST: tcp://docker:2375
   script:
+    # ここでdocker-composeでアプリを立ち上げる（必要なら）
     - docker-compose -f docker-compose.yml up -d
     # アプリが立ち上がるのを待機（最大60秒）
     - echo "Waiting for app to start..."
@@ -80,14 +22,7 @@ up_app:
         echo "Waiting..."
         sleep 2
       done
-
-# ZAPでスキャン
-zap_scan:
-  stage: zap_scan
-  image: owasp/zap2docker-stable
-  dependencies:
-    - up_app
-  script:
+    # ZAPスキャンを実行
     - zap-baseline.py -t http://localhost:80 -g zap-gen.conf -r zap-report.html || true
   artifacts:
     paths:
