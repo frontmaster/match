@@ -3,7 +3,7 @@ stages:
 
 zap_scan:
   stage: zap_scan
-  image: owasp/zap2docker-stable
+  image: zaproxy/zap-stable
   services:
     - docker:dind
   variables:
