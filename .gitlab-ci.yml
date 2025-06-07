@@ -2,7 +2,6 @@ stages:
   - up_app
   - zap_scan
 
-# アプリをdocker-composeで立ち上げるジョブ
 up_app:
   stage: up_app
   image: docker/compose:1.29.2
@@ -15,7 +14,7 @@ up_app:
     - echo "Waiting for app to start..."
     - |
       for i in {1..30}; do
-        if curl -s http://localhost:80 > /dev/null; then
+        if wget --spider --timeout=2 http://localhost:80; then
           echo "App is up!"
           break
         fi
@@ -23,14 +22,13 @@ up_app:
         sleep 2
       done
 
-# ZAPスキャンを行うジョブ
 zap_scan:
   stage: zap_scan
   image: zaproxy/zap-stable
   dependencies:
     - up_app
   script:
-    - zap-baseline.py -t http://host.docker.internal:80 -g zap-gen.conf -r zap-report.html || true
+    - zap-baseline.py -t http://host.docker.internal:80 -r zap-report.html || true
   artifacts:
     paths:
       - zap-report.html
