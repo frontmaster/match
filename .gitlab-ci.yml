@@ -21,6 +21,7 @@ zap_scan:
         -v $PWD:/zap/wrk:rw \
         zaproxy/zap-stable zap-baseline.py \
         -t http://nginx \
+        -u "/, /login, /register" \
         -r zap-report.html || true
   artifacts:
     paths:
