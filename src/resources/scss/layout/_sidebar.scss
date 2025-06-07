@@ -1,0 +1,8 @@
+@use "../foundation/variables" as *;
+.l-sidebar {
+    width: 300px;
+    height: 75%;
+    margin-right: $space_3l;
+    padding: $space_m;
+    box-sizing: border-box;
+}

@@ -1,0 +1,12 @@
+@use "../../foundation/variables" as *;
+.p-mypage{
+    display: flex;
+    &__title{
+        font-size: $font-size_xxl;
+        color: $main-color;
+    }
+    &__subTitle{
+        font-size: $font-size_xl;
+        color: $main-color;
+    }
+}

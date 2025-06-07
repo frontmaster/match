@@ -1,0 +1,133 @@
+@use "../../foundation/variables" as *;
+.p-createProject {
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: $font-size_3l;
+        color: $main-color;
+        margin-bottom: $space_3l;
+    }
+    &__formContainer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: $space_3l;
+    }
+    &__form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid $main-color;
+        border-radius: 25px;
+        padding: $space_l;
+        box-sizing: border-box;
+        margin-bottom: 100px;
+        width: 700px;
+        height: 700px;
+        &--modal{
+            margin-top: 50px;
+        }
+    }
+    &__itemContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: $space_xl;
+    }
+    &__item {
+        margin-bottom: $space_xl;
+        display: flex;
+        &--projectType {
+            margin-bottom: $space_xl;
+            display: flex;
+        }
+        &--price {
+            display: none;
+            margin-bottom: $space_xl;
+            display: flex;
+        }
+    }
+    &__labelContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: $space_xl;
+    }
+    &__radioContainer {
+        display: flex;
+        align-items: center;
+    }
+    &__label {
+        margin-right: $space_l;
+        width: 100px;
+        font-size: $font-size_l;
+    }
+    &__input {
+        height: 30px;
+        width: 450px;
+        &--price {
+            width: 200px;
+            height: 30px;
+            margin-right: $space_m;
+        }
+    }
+    &__textarea {
+        width: 450px;
+        height: 200px;
+        margin-bottom: $space_xl;
+    }
+    &__errMsg {
+        margin-bottom: $space_l;
+    }
+    &__btn{
+        margin-right: 30px;
+        &--modal{
+            display: flex;
+            justify-content: space-around;
+        }
+        &--cancel{
+            background-color: $alert-color;
+            border: $alert-color;
+        }
+    }
+    &__btnContainer{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__modal {
+        display: none;
+        width: 400px;
+        height: 200px;
+        background-color: $white;
+        padding: $space_l;
+        box-sizing: border-box;
+        position: fixed;
+        top: 20%;
+        left: 5%;
+        z-index: 1;
+        border-radius: 10px;
+        // @include mq("lg") {
+        //     left: 0%;
+        // }
+        // @include mq() {
+        //     width: 90%;
+        //     left: 0%;
+        // }
+        // @include mq("ss") {
+        //     width: 90%;
+        // }
+        &--cover {
+            background-color: $shadow;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    }
+&__sentence{
+    &--modal{
+        text-align: center;
+    }
+}
+}

@@ -1,0 +1,13 @@
+@use "../../foundation/variables" as *;
+.c-require{
+    background-color: $alert-color;
+    color: $white;
+    padding: $space_s;
+    box-sizing: border-box;
+    font-size: $font-size_m;
+    width: 45px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

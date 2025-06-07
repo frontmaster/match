@@ -1,0 +1,38 @@
+@use "../../foundation/variables" as *;
+.p-login{
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: $font-size_3l;
+        color: $main-color;
+        margin-bottom: $space_3l;
+    }
+    &__formContainer{
+        border: 1px solid $main-color;
+        border-radius: 25px;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+    &__form{
+        width: 500px; 
+    }
+    &__part{
+        display: flex;
+        align-items: center;
+        margin-bottom: $space_3l;
+    }
+    &__label{
+        width: 150px;
+    }
+    &__input{
+        height: 30px;
+        width: 400px;
+    }
+    &__btnContainer{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__errMsg{
+        margin-bottom: $space_l;
+    }
+}

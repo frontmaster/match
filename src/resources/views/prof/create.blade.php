@@ -1,0 +1,47 @@
+@extends('layouts.master')
+
+@section('title', 'プロフィール編集ページ')
+
+@section('content')
+<div class="p-profile">
+    <h1 class="p-profile__title">プロフィール編集</h1>
+    @if(session('success'))
+    <div>
+        {{ session('success') }}
+    </div>
+    @endif
+    <form action="{{ route('profiles.update', $user->id) }}" method="POST" enctype="multipart/form-data" class="p-profile__form">
+        @csrf
+        @method('PUT')
+
+        @error('image')
+        <div class="p-profile__errMsg c-errMsg">{{ $message }}</div>
+        @enderror
+        <div class="p-profile__part">
+            <label for="" class="p-profile__label">プロフィール画像</label>
+            <img src="{{ $user->image ? asset('storage/img/' . $user->image) : asset('img/person.jpg') }}" class="p-profile__img" alt="プロフィール画像">
+            <input type="file" name="image">
+        </div>
+
+        @error('email')
+        <div class="p-profile__errMsg c-errMsg">{{ $message }}</div>
+        @enderror
+        <div class="p-profile__part">
+            <label for="" class="p-profile__label">メールアドレス</label>
+            <input type="email" name="email" class="p-profile__input" value="{{ old('email', $user->email) }}">
+        </div>
+
+        @error('bio')
+        <div class="p-profile__errMsg c-errMsg">{{ $message }}</div>
+        @enderror
+        <div class="p-profile__part">
+            <label for="" class="p-profile__label">自己紹介</label>
+            <textarea name="bio" id="" class="p-profile__textarea">{{ old('bio', $user->bio) }}</textarea>
+        </div>
+        <div class="p-profile__btnContainer">
+            <button type="submit" class="c-btn">変更</button>
+        </div>
+    </form>
+
+</div>
+@endsection

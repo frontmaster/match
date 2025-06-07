@@ -1,0 +1,13 @@
+@use "../../foundation/variables" as *;
+.c-btn{
+    background-color: $main-color;
+    color: $white;
+    height: 40px;
+    width: 100px;
+    border: 1px solid $main-color;
+    opacity: 0.8;
+    &:hover{
+        cursor: pointer;
+        opacity: 1;
+    }
+}

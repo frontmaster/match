@@ -1,0 +1,55 @@
+@use "../../foundation/variables" as *;
+.c-sidebar {
+    &__menublock {
+        margin-bottom: $space_3l;
+        width: 100%;
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-top: solid 1px $base-color;
+        border-radius: 5px;
+        padding: $space_m;
+        box-sizing: border-box;
+        height: 60px;
+        background-color: $main-color;
+
+        &--short {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-bottom: $space_xl;
+            border-bottom: solid 1px $white;
+            border-radius: 5px;
+            padding: $space_m;
+            box-sizing: border-box;
+            height: 60px;
+            background-color: $main-color;
+        }
+        &--mid {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-bottom: solid 1px $white;
+            border-radius: 5px;
+            padding: $space_m;
+            box-sizing: border-box;
+            height: 60px;
+            background-color: $main-color;
+        }
+        &--title {
+            font-size: $font-size_l;
+            color: $black;
+            font-weight: bold;
+            margin-bottom: $space_s;
+            margin-top: $space_s;
+        }
+        &--link {
+            color: $base-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

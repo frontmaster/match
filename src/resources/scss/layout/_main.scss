@@ -1,0 +1,9 @@
+@use "../foundation/variables" as *;
+.l-main{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    min-height: 50vh;
+}
