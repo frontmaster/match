@@ -1,52 +1,53 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.master')
 
-        <!-- Name
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div> -->
+@section('title', 'ユーザー登録')
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+@section('content')
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+<div class="p-register">
+    <h1 class="p-register__title">ユーザー登録</h1>
+    <div class="p-register__formContainer">
+        <form method="POST" action="{{ route('register') }}" class="p-register__form">
+            @csrf
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            @error('email')
+            <div class="p-register__errMsg c-errMsg">{{ $message }}</div>
+            @enderror
+            <div class="p-register__part">
+                <label for="email" class="p-register__label">メールアドレス</label>
+                <input id="email" class="p-register__input" type="email" name="email" :value="old('email')" />
+            </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            @error('password')
+            <div class="p-register__errMsg c-errMsg">{{ $message }}</div>
+            @enderror
+            <div class="p-register__part">
+                <label for="password" class="p-register__label">パスワード</label>
+                <input id="password" class="p-register__input"
+                    type="password"
+                    name="password" />
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            @error('password_confirmation')
+            <div class="p-register__errMsg c-errMsg">{{ $message }}</div>
+            @enderror
+            <div class="p-register__part">
+                <label for="password_confirmation" class="p-register__label">パスワード（再入力）</label>
+                <input id="password_confirmation" class="p-register__input"
+                    type="password"
+                    name="password_confirmation"/>
+            </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+
+
+            <div class="p-register__btnContainer">
+                <button class="c-btn">登録</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+@endsection

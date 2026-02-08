@@ -4,6 +4,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProfController;
+use App\Http\Controllers\PracticeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +35,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('profiles', ProfController::class);
     
 });
-
+Route::get('/practice/users', [PracticeController::class, 'users']);Route::get('/practice/users', [PracticeController::class, 'users']);
 require __DIR__.'/auth.php';

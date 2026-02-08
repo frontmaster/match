@@ -18,15 +18,16 @@
     }
     &__part{
         display: flex;
-        align-items: center;
+        flex-direction: column;
         margin-bottom: $space_3l;
     }
     &__label{
-        width: 150px;
+        margin-bottom: $space_m;
     }
     &__input{
-        height: 30px;
-        width: 400px;
+        height: 40px;
+        border:1px solid $shadow;
+        border-radius: 5px;
     }
     &__btnContainer{
         display: flex;

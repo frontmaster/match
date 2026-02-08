@@ -145,7 +145,7 @@ return [
     'starts_with' => ':attributeには、:valuesのどれかで始まる値を指定してください。',
     'string' => ':attributeは文字列を指定してください。',
     'timezone' => ':attributeには、有効なゾーンを指定してください。',
-    'unique' => ':attributeの値は既に存在しています。',
+    'unique' => ':attributeの値は使用できません。',
     'uploaded' => ':attributeのアップロードに失敗しました。',
     'uppercase' => ':attributeは、大文字のみで指定してください。',
     'url' => ':attributeに正しい形式を指定してください。',
@@ -170,6 +170,9 @@ return [
         'terms' => [
             'required' => '登録には規約への同意が必須となります。',
         ],
+        'email' => [
+            'unique' => 'そのそのメールアドレスは使用できません',
+        ]
     ],
 
     /*

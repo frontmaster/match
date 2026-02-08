@@ -1,0 +1,39 @@
+@use "../../foundation/variables" as *;
+.p-register{
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: $font-size_3l;
+        color: $main-color;
+        margin-bottom: $space_3l;
+    }
+    &__formContainer{
+        border: 1px solid $main-color;
+        border-radius: 25px;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+    &__form{
+        width: 500px; 
+    }
+    &__part{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $space_3l;
+    }
+    &__label{
+        margin-bottom: $space_m;
+    }
+    &__input{
+        height: 40px;
+        border:1px solid $shadow;
+        border-radius: 5px;
+    }
+    &__btnContainer{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__errMsg{
+        margin-bottom: $space_l;
+    }
+}
