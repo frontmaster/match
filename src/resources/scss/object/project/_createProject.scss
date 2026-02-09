@@ -15,6 +15,7 @@
     &__form {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         border: 1px solid $main-color;
         border-radius: 25px;
@@ -30,14 +31,18 @@
     &__itemContainer {
         display: flex;
         align-items: center;
+        justify-self: center;
         margin-bottom: $space_xl;
+        width: 70%;
     }
     &__item {
         margin-bottom: $space_xl;
         display: flex;
+        flex-direction: column;
         &--projectType {
             margin-bottom: $space_xl;
             display: flex;
+            flex-direction: column;
         }
         &--price {
             display: none;
@@ -48,16 +53,17 @@
     &__labelContainer {
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        margin-right: $space_xl;
+        justify-content: start;
+        margin-bottom: $space_m;
     }
     &__radioContainer {
         display: flex;
         align-items: center;
+        justify-content: start;
     }
     &__label {
-        margin-right: $space_l;
-        width: 100px;
+        
+        width: 80px;
         font-size: $font-size_l;
     }
     &__input {

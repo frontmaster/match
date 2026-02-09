@@ -6,7 +6,7 @@
 <div class="p-createProject__modal js-show-modal-target">
     <p class="p-createProject__sentence--modal">案件を登録しますか？</p>
     <div class="p-createProject__form--modal">
-        
+
         <div class="p-createProject__btn--modal">
             <button type="button" class="c-btn p-createProject__btn--cancel js-hide-modal">キャンセル</button>
             <button type="button" class="c-btn p-createProject__btn--buy js-submit-main-form">登録</button>
@@ -71,12 +71,14 @@
         @error('content')
         <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
         @enderror
-        <div class="p-createProject__item">
-            <div class="p-createProject__labelContainer">
-                <label for="content" class="p-createProject__label">内容</label>
-                <span class="c-require">必須</span>
+        <div class="p-createProject__itemContainer">
+            <div class="p-createProject__item">
+                <div class="p-createProject__labelContainer">
+                    <label for="content" class="p-createProject__label">内容</label>
+                    <span class="c-require">必須</span>
+                </div>
+                <textarea name="content" id="content" class="p-createProject__textarea">{{ old('content') }}</textarea>
             </div>
-            <textarea name="content" id="content" class="p-createProject__textarea">{{ old('content') }}</textarea>
         </div>
         <div class="p-createProject__btnContainer">
             <button type="button" class="c-btn p-createProject__btn js-show-modal">登録</button>
