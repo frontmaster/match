@@ -19,11 +19,10 @@
         flex-direction: column;
         border: 1px solid $main-color;
         border-radius: 25px;
-        padding: $space_l;
+        padding: $space_3l;
         box-sizing: border-box;
         margin-bottom: 100px;
-        width: 700px;
-        height: 700px;
+        width: 100%;
         &--modal{
             margin-top: 50px;
         }
@@ -33,7 +32,7 @@
         align-items: center;
         justify-self: center;
         margin-bottom: $space_xl;
-        width: 70%;
+        width: 100%;
     }
     &__item {
         margin-bottom: $space_xl;
@@ -48,6 +47,7 @@
             display: none;
             margin-bottom: $space_xl;
             display: flex;
+            flex-direction: column;
         }
     }
     &__labelContainer {
@@ -65,6 +65,10 @@
         
         width: 80px;
         font-size: $font-size_l;
+    }
+    &__inputContainer{
+        display: flex;
+        align-items: center;
     }
     &__input {
         height: 30px;
@@ -92,11 +96,15 @@
         &--cancel{
             background-color: $alert-color;
             border: $alert-color;
+            width: 40%;
+        }
+        &--buy{
+            width: 40%;
         }
     }
     &__btnContainer{
         display: flex;
-        justify-content: flex-end;
+        width: 100%;
     }
     &__modal {
         display: none;

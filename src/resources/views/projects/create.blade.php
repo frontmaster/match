@@ -55,17 +55,19 @@
                 </div>
             </div>
         </div>
-        <div id="priceField" class="p-createProject__item--price">
+        <div id="priceField" class="p-createProject__itemContainer">
             @error('price')
             <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
             @enderror
-            <div class="p-createProject__itemContainer">
+            <div class="p-createProject__item--price">
                 <div class="p-createProject__labelContainer">
                     <label for="price" class="p-createProject__label" class="p-createProject__input">金額</label>
                     <span class="c-require">必須</span>
                 </div>
-                <input type="number" id="price" name="price" class="p-createProject__input--price" value="{{ old('price') }}">
-                <span>円</span>
+                <div class="p-createProject__inputContainer">
+                    <input type="number" id="price" name="price" class="p-createProject__input--price" value="{{ old('price') }}">
+                    <span>円</span>
+                </div>
             </div>
         </div>
         @error('content')

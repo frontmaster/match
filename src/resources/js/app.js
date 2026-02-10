@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (singleRadio && priceField) {
             if (singleRadio.checked) {
-                priceField.style.display = "block";
+                priceField.style.display = "flex";
             } else priceField.style.display = "none";
         }
     }
