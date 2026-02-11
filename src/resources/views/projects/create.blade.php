@@ -24,9 +24,6 @@
 <div class="p-createProject__formContainer">
     <form method="POST" action="{{ route('projects.store') }}" class="p-createProject__form">
         @csrf
-        @error('project_title')
-        <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-        @enderror
         <div class="p-createProject__itemContainer">
             <div class="p-createProject__item">
                 <div class="p-createProject__labelContainer">
@@ -34,11 +31,12 @@
                     <span class="c-require">必須</span>
                 </div>
                 <input type="text" id="project_title" name="project_title" class="p-createProject__input" value="{{ old('project_title') }}">
+                @error('project_title')
+                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
+                @enderror
             </div>
         </div>
-        @error('project_type')
-        <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-        @enderror
+
         <div class="p-createProject__itemContainer">
             <div class="p-createProject__item--projectType">
                 <div class="p-createProject__labelContainer">
@@ -50,15 +48,14 @@
                     <label for="single">単発案件</label>
                     <input type="radio" id="single" name="project_type" value="single" {{ old('project_type') == 'single' ? 'checked' : '' }}>
                     <label for="revenue">レベニューシェア案件案件</label>
-                    <input type="radio" id="revenue" name="project_type"
-                        value="revenue" {{ old('project_type') == 'revenue' ? 'checked' : '' }}>
+                    <input type="radio" id="revenue" name="project_type" value="revenue" {{ old('project_type') == 'revenue' ? 'checked' : '' }}>
                 </div>
+                @error('project_type')
+                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
+                @enderror
             </div>
         </div>
         <div id="priceField" class="p-createProject__itemContainer">
-            @error('price')
-            <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-            @enderror
             <div class="p-createProject__item--price">
                 <div class="p-createProject__labelContainer">
                     <label for="price" class="p-createProject__label" class="p-createProject__input">金額</label>
@@ -68,11 +65,12 @@
                     <input type="number" id="price" name="price" class="p-createProject__input--price" value="{{ old('price') }}">
                     <span>円</span>
                 </div>
+                @error('price')
+                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
+                @enderror
             </div>
         </div>
-        @error('content')
-        <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-        @enderror
+
         <div class="p-createProject__itemContainer">
             <div class="p-createProject__item">
                 <div class="p-createProject__labelContainer">
@@ -80,6 +78,9 @@
                     <span class="c-require">必須</span>
                 </div>
                 <textarea name="content" id="content" class="p-createProject__textarea">{{ old('content') }}</textarea>
+                @error('content')
+                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
+                @enderror
             </div>
         </div>
         <div class="p-createProject__btnContainer">
