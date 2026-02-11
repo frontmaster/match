@@ -23,7 +23,7 @@
         box-sizing: border-box;
         margin-bottom: 100px;
         width: 100%;
-        &--modal{
+        &--modal {
             margin-top: 50px;
         }
     }
@@ -62,11 +62,10 @@
         justify-content: start;
     }
     &__label {
-        
         width: 80px;
         font-size: $font-size_l;
     }
-    &__inputContainer{
+    &__inputContainer {
         display: flex;
         align-items: center;
     }
@@ -86,37 +85,39 @@
     &__errMsg {
         margin-top: $space_l;
     }
-    &__btn{
+    &__btn {
         margin-right: 30px;
-        &--modal{
+        &--modal {
             display: flex;
             justify-content: space-around;
         }
-        &--cancel{
+        &--cancel {
             background-color: $alert-color;
             border: $alert-color;
             width: 40%;
+            height: 50px;
         }
-        &--buy{
+        &--buy {
             width: 40%;
+            height: 50px;
         }
     }
-    &__btnContainer{
+    &__btnContainer {
         display: flex;
         width: 100%;
     }
     &__modal {
-        display: none;
         width: 400px;
         height: 200px;
         background-color: $white;
         padding: $space_l;
         box-sizing: border-box;
-        position: fixed;
-        top: 20%;
-        left: 5%;
-        z-index: 1;
+        z-index: 2;
         border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
         // @include mq("lg") {
         //     left: 0%;
         // }
@@ -128,19 +129,28 @@
         //     width: 90%;
         // }
         &--cover {
-            background-color: $shadow;
-            opacity: 0.5;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            inset: 0;
+            z-index: 1;
             display: none;
+            justify-content: center;
+            align-items: center;
         }
     }
-&__sentence{
-    &--modal{
-        text-align: center;
+    &__modalClose{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background:none;
+        border:none;
+        font-size: $font-size_xxl;
+        cursor: pointer;
     }
-}
+    &__sentence {
+        &--modal {
+            text-align: center;
+            margin-bottom: $space_3l;
+        }
+    }
 }

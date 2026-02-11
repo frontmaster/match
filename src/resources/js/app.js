@@ -35,23 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
 //モーダル表示
 $(function () {
     $(".js-show-modal").on("click", function () {
-        const modalWidth = $(".js-show-modal-target").width();
-        const windowWidth = $(window).width();
-        console.log(modalWidth);
-        console.log(windowWidth);
-        $(".js-show-modal-target").attr(
-            "style",
-            "margin-left:" + (windowWidth / 2 - modalWidth / 2 - 15) + "px"
-        );
-        $(".js-show-modal-target").show();
-        $(".js-show-modal-cover").show();
+        $(".js-show-modal-cover").css("display", "flex");
     });
 
     $(".js-hide-modal").on("click", function () {
-        $(".js-show-modal-target").hide();
         $(".js-show-modal-cover").hide();
     });
 });
+
 
 //モーダルから送信
 document.addEventListener("DOMContentLoaded", function () {

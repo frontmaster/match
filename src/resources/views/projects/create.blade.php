@@ -3,21 +3,27 @@
 @section('title', '案件登録ページ')
 
 @section('content')
-<div class="p-createProject__modal js-show-modal-target">
-    <p class="p-createProject__sentence--modal">案件を登録しますか？</p>
-    <div class="p-createProject__form--modal">
+<div class="p-createProject__modal--cover js-show-modal-cover">
+    <div class="p-createProject__modal js-show-modal-target">
+        <p class="p-createProject__sentence--modal">
+            案件を登録しますか？
+        </p>
 
         <div class="p-createProject__btn--modal">
-            <button type="button" class="c-btn p-createProject__btn--cancel js-hide-modal">キャンセル</button>
-            <button type="button" class="c-btn p-createProject__btn--buy js-submit-main-form">登録</button>
+            <button class="p-createProject__modalClose js-hide-modal">×</button>
+            <button type="button" class="c-btn p-createProject__btn--cancel js-hide-modal">
+                キャンセル
+            </button>
+            <button type="button" class="c-btn p-createProject__btn--buy js-submit-main-form">
+                登録
+            </button>
         </div>
     </div>
 </div>
 
-<div class="p-createProject__modal--cover js-show-modal-cover"></div>
 <h2 class="p-createProject__title">案件登録</h2>
 @if(session('success'))
-<div>
+<div class="c-success">
     {{ session('success') }}
 </div>
 @endif
