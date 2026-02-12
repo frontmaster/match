@@ -1,10 +1,14 @@
 (<template>
-  <div>
+  <div class="p-mypage__itemContainer">
     <h1 class="text-2xl font-bold mb-4">案件一覧</h1>
     <div v-for="p in projects" :key="p.id" :project="p">
       <p>案件名：{{ p.project_title }}</p>
-      <p>案件種別：{{ p.project_type }}</p>
-      <p>価格：{{ p.price }}</p>
+      <p>
+        案件種別：{{
+          p.project_type === "single" ? "単発" : "レベニューシェア"
+        }}
+      </p>
+      <p v-if="p.project_type === 'single'">価格：{{ p.price }}</p>
       <p>内容：{{ p.content }}</p>
     </div>
   </div>

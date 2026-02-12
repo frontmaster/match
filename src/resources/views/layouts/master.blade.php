@@ -13,7 +13,7 @@
     @vite(['resources/js/app.js', 'resources/scss/app.scss'])
 </head>
 
-<body class="l-body">
+<body class="l-body @yield('body-class')">
     @guest
     <header class="l-header">
         <div class="l-header__logo"><a href="{{ url('/') }}" class="l-header__logo--link">match</a></div>

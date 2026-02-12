@@ -1,12 +1,25 @@
 @use "../../foundation/variables" as *;
 .p-mypage{
     display: flex;
+    justify-content:flex-start;
+    
+    
+    &__sidebarContainer{
+       
+    }
     &__title{
         font-size: $font-size_xxl;
         color: $main-color;
+        margin-bottom: $space_xxl;
     }
     &__subTitle{
         font-size: $font-size_xl;
         color: $main-color;
+        margin-bottom: $space_l;
+    }
+    &__itemContainer{
+        background-color: $sub-color1;
+        padding: $space_l;
+        box-sizing: border-box;
     }
 }
