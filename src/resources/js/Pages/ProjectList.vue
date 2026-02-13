@@ -8,7 +8,13 @@
           p.project_type === "single" ? "単発" : "レベニューシェア"
         }}
       </p>
-      <p v-if="p.project_type === 'single'">価格：{{ p.price }}</p>
+      <div class="p-mypage__projectList">
+        <p v-if="p.project_type === 'single'">価格：{{ p.price_min }}</p>
+        <span>千円</span>
+        <span>〜</span>
+        <p v-if="p.project_type === 'single'">{{ p.price_max }}</p>
+        <span>千円</span>
+      </div>
       <p>内容：{{ p.content }}</p>
     </div>
   </div>

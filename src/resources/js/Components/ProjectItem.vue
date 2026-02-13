@@ -6,7 +6,7 @@
       {{ project.project_type === "single" ? "単発" : "レベニューシェア" }}
     </p>
     <p v-if="project.price !== null">
-      金額: ¥{{ project.price.toLocaleString() }}
+      金額: ¥{{ project.price_min.toLocaleString() }}
     </p>
     <p>内容: {{ project.description }}</p>
   </div>
