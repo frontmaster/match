@@ -61,15 +61,18 @@
                 @enderror
             </div>
         </div>
-        <div id="priceField" class="p-createProject__itemContainer">
+        <div id="priceField" class="p-createProject__itemContainer--price">
             <div class="p-createProject__item--price">
                 <div class="p-createProject__labelContainer">
                     <label for="price" class="p-createProject__label" class="p-createProject__input">金額</label>
                     <span class="c-require">必須</span>
                 </div>
                 <div class="p-createProject__inputContainer">
-                    <input type="number" id="price" name="price" class="p-createProject__input--price" value="{{ old('price') }}">
-                    <span>円</span>
+                    <input type="number" id="price" name="price_min" class="p-createProject__input--price" value="{{ old('price_min') }}">
+                    <span>千円</span>
+                    <span class="p-createProject__separator">〜</span>
+                    <input type="number" id="" name="price_max" class="p-createProject__input--price" value="{{ old('price_max') }}">
+                    <span>千円</span>
                 </div>
                 @error('price')
                 <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>

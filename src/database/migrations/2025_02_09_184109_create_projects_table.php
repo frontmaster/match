@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('project_title');
             $table->enum('project_type', ['single', 'revenue']);
-            $table->integer('price')->nullable();
+            $table->integer('price_min')->nullable();
+            $table->integer('price_max')->nullable();
             $table->text('content');
             $table->timestamps();
         });

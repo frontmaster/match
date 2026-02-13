@@ -24,7 +24,22 @@ class ProjectRequest extends FormRequest
         return [
             'project_title' => 'required|string|max:255',
             'project_type' => 'required|in:single,revenue',
-            'price' => $this->input('project_type') === 'single' ? 'required|integer|min:0' : 'nullable|integer|min:0', // 単発の場合のみ金額を必須にする
+
+            'price_min' => [
+                'nullable',
+                'integer',
+                'min:1',
+                'required_if:project_type, single',
+            ],
+
+            'price_max' => [
+                'nullable',
+                'integer',
+                'min:1',
+                'required_if:project_type, single',
+                'gte:price_min',
+            ],
+            
             'content' => 'required|string|max:1000',
         ];
     }

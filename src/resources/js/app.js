@@ -4,7 +4,11 @@ import Alpine from "alpinejs";
 import { createApp } from "vue";
 import ProjectList from "./Pages/ProjectList.vue";
 
-createApp(ProjectList).mount("#app");
+const appElement = document.getElementById("app");
+
+if (appElement) {
+    createApp(ProjectList).mount("#app");
+}
 
 window.Alpine = Alpine;
 

@@ -35,5 +35,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('profiles', ProfController::class);
     
 });
-Route::get('/practice/users', [PracticeController::class, 'users']);Route::get('/practice/users', [PracticeController::class, 'users']);
+
 require __DIR__.'/auth.php';

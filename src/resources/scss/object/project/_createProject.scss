@@ -33,6 +33,13 @@
         justify-self: center;
         margin-bottom: $space_xl;
         width: 100%;
+        &--price {
+            display: none;
+            align-items: center;
+            justify-self: center;
+            margin-bottom: $space_xl;
+            width: 100%;
+        }
     }
     &__item {
         margin-bottom: $space_xl;
@@ -138,12 +145,12 @@
             align-items: center;
         }
     }
-    &__modalClose{
+    &__modalClose {
         position: absolute;
         top: 10px;
         right: 15px;
-        background:none;
-        border:none;
+        background: none;
+        border: none;
         font-size: $font-size_xxl;
         cursor: pointer;
     }
@@ -152,5 +159,9 @@
             text-align: center;
             margin-bottom: $space_3l;
         }
+    }
+    &__separator {
+        margin-right: $space_m;
+        margin-left: $space_m;
     }
 }
