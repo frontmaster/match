@@ -77,6 +77,12 @@
                 @error('price')
                 <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
                 @enderror
+                @error('price_min')
+                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
+                @enderror
+                @error('price_max')
+                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
+                @enderror
             </div>
         </div>
 
