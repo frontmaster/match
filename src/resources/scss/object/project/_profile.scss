@@ -1,48 +1,68 @@
 @use "../../foundation/variables" as *;
-.p-profile{
-    border: 1px solid $main-color;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: $space_xl;
-    box-sizing: border-box;
-
-    &__title{
+.p-profile {
+    &__title {
         display: flex;
         justify-content: center;
         font-size: $font-size_3l;
         color: $main-color;
         margin-bottom: $space_3l;
     }
-    &__form{
-        width: 700px;
-    }
-    &__part{
+    &__formContainer {
         display: flex;
-        align-items: center;
+        justify-content: center;
         margin-bottom: $space_3l;
     }
-    &__label{
-        margin-right: $space_l;
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid $main-color;
+        border-radius: 25px;
+        padding: $space_3l;
+        box-sizing: border-box;
+        margin-bottom: 100px;
+        width: 100%;
+    }
+    &__itemContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $space_xl;
+        width: 100%;
+    }
+    &__item {
+        margin-bottom: $space_xl;
+        display: flex;
+        flex-direction: column;
+    }
+    &__label {
         font-size: $font-size_l;
         width: 200px;
         margin-right: $space_l;
+        margin-bottom: $space_l;
+
     }
-    &__img{
-        width: 20%;
-        
+    &__imgContainer{
+        display: flex;
+        align-items: center;
+        width: 450px;
     }
-    &__input{
+    &__img {
+        width: 15%;
+        border-radius: 50%;
+        margin-right: $space_l;
+    }
+    &__input {
         height: 30px;
         width: 450px;
     }
-    &__textarea{
+    &__textarea {
         width: 450px;
         height: 200px;
     }
-    &__btnContainer{
+    &__btnContainer {
         display: flex;
-        justify-content: flex-end;
+        width: 100%;
     }
 }
