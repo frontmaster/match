@@ -1,25 +1,37 @@
 <template>
-  <div class="p-4 border rounded mb-2">
-    <h2 class="text-xl font-bold">{{ project.title }}</h2>
-    <p>
-      種別:
-      {{ project.project_type === "single" ? "単発" : "レベニューシェア" }}
-    </p>
-    <p v-if="project.price !== null">
-      金額: ¥{{ project.price_min.toLocaleString() }}
-    </p>
-    <p>内容: {{ project.description }}</p>
+  <div class="p-mypage__projectList">
+    <dl class="p-mypage__itemContainer">
+      <dt class="p-mypage__itemTitle">案件名</dt>
+      <dd>{{ project.project_title }}</dd>
+    </dl>
+
+    <dl class="p-mypage__itemContainer">
+      <dt class="p-mypage__itemTitle">案件種別</dt>
+      <dd class="">
+        {{ project.project_type === "single" ? "単発" : "レベニューシェア" }}
+      </dd>
+    </dl>
+    <dl
+      v-if="project.project_type === 'single'"
+      class="p-mypage__itemContainer"
+    >
+      <dt class="p-mypage__itemTitle">価格</dt>
+      <dd>{{ project.price_min }}〜{{ project.price_max }} 千円</dd>
+    </dl>
+
+    <dl class="p-mypage__itemContainer">
+      <dt class="p-mypage__itemTitle">内容</dt>
+      <dd>{{ project.content }}</dd>
+    </dl>
+    <a href="">詳細</a>
   </div>
 </template>
-  
-  <script>
-export default {
-  props: {
-    project: {
-      type: Object,
-      required: true,
-    },
+
+<script setup>
+defineProps({
+  project: {
+    type: Object,
+    required: true,
   },
-};
+});
 </script>
-  

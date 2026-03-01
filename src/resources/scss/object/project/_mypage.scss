@@ -17,7 +17,7 @@
         color: $main-color;
         margin-bottom: $space_l;
     }
-    &__itemContainer{
+    &__listContainer{
         
         padding: $space_l;
         box-sizing: border-box;
@@ -29,14 +29,24 @@
         display: flex;
         flex-direction: column;
         margin-bottom: $space_xl;
-        background-color: $accent-color;
         padding: $space_l;
         box-sizing: border-box;
         border-radius: $space_l;
-        height: 100px;
+        box-shadow: 0 4px 12px $shadow;
+        
+    }
+    &__itemContainer{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $space_l;
+        width: 450px;
     }
     &__item{
-        display: flex;
-        
+        display: flex;        
+    }
+    &__itemTitle{
+        color: $main-color;
+        margin-bottom: $space_m;
+        width: 120px;
     }
 }

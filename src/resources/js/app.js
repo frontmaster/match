@@ -2,12 +2,12 @@ import "./bootstrap";
 
 import Alpine from "alpinejs";
 import { createApp } from "vue";
-import ProjectList from "./Pages/ProjectList.vue";
+import Mypage from "./Pages/Mypage.vue";
 
 const appElement = document.getElementById("app");
 
 if (appElement) {
-    createApp(ProjectList).mount("#app");
+    createApp(Mypage).mount("#app");
 }
 
 window.Alpine = Alpine;
