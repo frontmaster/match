@@ -13,4 +13,5 @@ class ProjectController extends Controller
         $projects = Project::where('user_id', $request->user()->id)->latest()->get();
         return response()->json($projects);
     }
+
 }
