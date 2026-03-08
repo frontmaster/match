@@ -3,86 +3,63 @@
 @section('title', '案件詳細ページ')
 
 @section('content')
-<h2 class="p-createProject__title">案件詳細</h2>
-@if(session('success'))
-<div class="c-success">
-    {{ session('success') }}
-</div>
-@endif
-<div class="p-createProject__formContainer">
-    <form method="POST" action="{{ route('projects.store') }}" class="p-createProject__form">
+<h2 class="p-detailProject__title">案件詳細</h2>
+<div class="p-detailProject__formContainer">
+    <form method="POST" action="{{ route('projects.store') }}" class="p-detailProject__form">
         @csrf
-        <div class="p-createProject__itemContainer">
-            <div class="p-createProject__item">
-                <div class="p-createProject__labelContainer">
-                    <label for="project_title" class="p-createProject__label">案件名</label>
-                    <span class="c-require">必須</span>
+        <div class="p-detailProject__itemContainer">
+            <div class="p-detailProject__item">
+                <div class="p-detailProject__labelContainer">
+                    <label for="project_title" class="p-detailProject__label">案件名</label>
                 </div>
-                <input type="text" id="project_title" name="project_title" class="p-createProject__input" value="{{ old('project_title') }}">
-                @error('project_title')
-                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-                @enderror
+                <p>{{ $project->project_title }}</p>
             </div>
         </div>
 
-        <div class="p-createProject__itemContainer">
-            <div class="p-createProject__item--projectType">
-                <div class="p-createProject__labelContainer">
-                    <label for="" class="p-createProject__label">案件種別</label>
-                    <span class="c-require">必須</span>
+        <div class="p-detailProject__itemContainer">
+            <div class="p-detailProject__item--projectType">
+                <div class="p-detailProject__labelContainer">
+                    <label for="" class="p-detailProject__label">案件種別</label>
                 </div>
 
-                <div class="p-createProject__radioContainer">
-                    <label for="single">単発案件</label>
-                    <input type="radio" id="single" name="project_type" value="single" {{ old('project_type') == 'single' ? 'checked' : '' }}>
-                    <label for="revenue">レベニューシェア案件案件</label>
-                    <input type="radio" id="revenue" name="project_type" value="revenue" {{ old('project_type') == 'revenue' ? 'checked' : '' }}>
+                <div class="p-detailProject__radioContainer">
+                    @if($project->project_type === 'single')
+                    <p>単発案件</p>
+                    @else
+                    <p>レベニューシェア案件</p>
+                    @endif
                 </div>
-                @error('project_type')
-                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-                @enderror
             </div>
         </div>
-        <div id="priceField" class="p-createProject__itemContainer--price">
-            <div class="p-createProject__item--price">
-                <div class="p-createProject__labelContainer">
-                    <label for="price" class="p-createProject__label" class="p-createProject__input">金額</label>
-                    <span class="c-require">必須</span>
+        @if($project->project_type === 'single')
+        <div id="" class="">
+            <div class="p-detailProject__item--projectType">
+                <div class="p-detailProject__labelContainer">
+                    <label for="price" class="p-detailProject__label" class="p-detailProject__input">金額</label>
                 </div>
-                <div class="p-createProject__inputContainer">
-                    <input type="number" id="price" name="price_min" class="p-createProject__input--price" value="{{ old('price_min') }}">
+                <div class="p-detailProject__inputContainer">
+                    <p>{{ $project->price_min }}</p>
                     <span>千円</span>
-                    <span class="p-createProject__separator">〜</span>
-                    <input type="number" id="" name="price_max" class="p-createProject__input--price" value="{{ old('price_max') }}">
+                    <span class="p-detailProject__separator">〜</span>
+                    <p>{{ $project->price_max }}</p>
                     <span>千円</span>
                 </div>
-                @error('price')
-                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-                @enderror
-                @error('price_min')
-                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-                @enderror
-                @error('price_max')
-                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-                @enderror
             </div>
         </div>
+        @endif
 
-        <div class="p-createProject__itemContainer">
-            <div class="p-createProject__item">
-                <div class="p-createProject__labelContainer">
-                    <label for="content" class="p-createProject__label">内容</label>
-                    <span class="c-require">必須</span>
+        <div class="p-detailProject__itemContainer">
+            <div class="p-detailProject__item">
+                <div class="p-detailProject__labelContainer">
+                    <label for="content" class="p-detailProject__label">内容</label>
                 </div>
-                <textarea name="content" id="content" class="p-createProject__textarea">{{ old('content') }}</textarea>
-                @error('content')
-                <div class="p-createProject__errMsg c-errMsg">{{ $message }}</div>
-                @enderror
+                <div name="content" id="content" class="p-detailProject__textarea">{{ $project->content }}</div>
             </div>
         </div>
-        <div class="p-createProject__btnContainer">
-            <button type="button" class="c-btn p-createProject__btn js-show-modal">登録</button>
+        <div class="p-detailProject__btnContainer">
+            <button type="button" class="c-btn p-detailProject__btn js-show-modal">登録</button>
         </div>
     </form>
+    <a href="{{ route('mypages.index')}}">マイページへ戻る</a>
 </div>
 @endsection
