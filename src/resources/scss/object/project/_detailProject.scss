@@ -10,6 +10,7 @@
     &__formContainer {
         display: flex;
         justify-content: center;
+        flex-direction: column;
         margin-bottom: $space_3l;
     }
     &__form {
@@ -88,7 +89,6 @@
     }
     &__textarea {
         width: 450px;
-        height: 200px;
     }
     &__errMsg {
         margin-top: $space_l;

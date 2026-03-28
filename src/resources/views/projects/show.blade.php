@@ -5,7 +5,7 @@
 @section('content')
 <h2 class="p-detailProject__title">案件詳細</h2>
 <div class="p-detailProject__formContainer">
-    <form method="POST" action="{{ route('projects.store') }}" class="p-detailProject__form">
+    <div class="p-detailProject__form">
         @csrf
         <div class="p-detailProject__itemContainer">
             <div class="p-detailProject__item">
@@ -56,10 +56,15 @@
                 <div name="content" id="content" class="p-detailProject__textarea">{{ $project->content }}</div>
             </div>
         </div>
-        <div class="p-detailProject__btnContainer">
-            <button type="button" class="c-btn p-detailProject__btn js-show-modal">登録</button>
-        </div>
+    </div>
+    <form method="POST" action="{{ route('comments.store', $project) }}">
+        @csrf
+        <h3>メッセージを送る</h3>
+        @error('comment')
+        <p style="color:red">{{ $message }}</p>
+        @enderror
+        <textarea name="comment" id=""></textarea>
+        <button type="submit">送信</button>
     </form>
-    <a href="{{ route('mypages.index')}}">マイページへ戻る</a>
 </div>
 @endsection

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\PracticeController;
+use App\Http\Controllers\ProjectCommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('mypages', MypageController::class);
     Route::resource('projects', ProjectController::class);
     Route::resource('profiles', ProfController::class);
-    
+    Route::post('/projects/{project}/comments', [ProjectCommentController::class, 'store'])->name('comments.store');
 });
 
 require __DIR__.'/auth.php';
