@@ -6,6 +6,13 @@
         font-size: $font-size_3l;
         color: $main-color;
         margin-bottom: $space_3l;
+        &--msg {
+            display: flex;
+            justify-content: center;
+            font-size: $font-size_xl;
+            color: $main-color;
+            margin-bottom: $space_3l;
+        }
     }
     &__formContainer {
         display: flex;
@@ -89,12 +96,16 @@
     }
     &__textarea {
         width: 450px;
+        &--msg{
+            width: 450px;
+            height: 200px;
+            margin-bottom: $space_xxl;
+        }
     }
     &__errMsg {
         margin-top: $space_l;
     }
     &__btn {
-        
         &--modal {
             display: flex;
             justify-content: space-around;

@@ -33,6 +33,7 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
+        $comments = $project->comments()->latest()->get();
+        return view('projects.show', compact('project', 'comments'));
     }
 }

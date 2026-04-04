@@ -57,14 +57,20 @@
             </div>
         </div>
     </div>
-    <form method="POST" action="{{ route('comments.store', $project) }}">
+    <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
+    <div class="p-detailProject__form">
+        @foreach($comments as $comment)
+        <p>{{ $comment->comment }}</p>
+        @endforeach
+    </div>
+    <h3 class="p-detailProject__title--msg">メッセージを送る</h3>
+    <form method="POST" action="{{ route('comments.store', $project) }}" class="p-detailProject__form">
         @csrf
-        <h3>メッセージを送る</h3>
         @error('comment')
         <p style="color:red">{{ $message }}</p>
         @enderror
-        <textarea name="comment" id=""></textarea>
-        <button type="submit">送信</button>
+        <textarea name="comment" id="" class="p-detailProject__textarea--msg"></textarea>
+        <button type="submit" class="c-btn">送信</button>
     </form>
 </div>
 @endsection
