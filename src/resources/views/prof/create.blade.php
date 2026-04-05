@@ -28,6 +28,17 @@
                 </div>
             </div>
 
+            @error('nickname')
+            <div class="p-profile__errMsg c-errMsg">{{ $message }}</div>
+            @enderror
+            <div class="p-profile__itemContainer">
+                <div class="p-profile__item">
+                    <label for="" class="p-profile__label">ニックネーム</label>
+                    <input type="text" name="nickname" class="p-profile__input" value="{{ old('nickname', $user->nickname) }}">
+                </div>
+            </div>
+
+
             @error('email')
             <div class="p-profile__errMsg c-errMsg">{{ $message }}</div>
             @enderror

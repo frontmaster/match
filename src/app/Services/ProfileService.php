@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 
 class ProfileService
@@ -21,6 +22,11 @@ class ProfileService
             'email' => 'required|email|unique:users,email,' . $user->id,
             'bio' => 'nullable|string|max:255',
             'image' => 'nullable|image|max:2048',
+            'nickname' => [
+                'required',
+                'max:30',
+                Rule::unique('users', 'nickname')->ignore($user->id),
+            ],
         ])->validate();
 
         // プロフィール画像の処理
