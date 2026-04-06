@@ -96,7 +96,7 @@
     }
     &__textarea {
         width: 450px;
-        &--msg{
+        &--msg {
             width: 450px;
             height: 200px;
             margin-bottom: $space_xxl;
@@ -175,5 +175,20 @@
     &__separator {
         margin-right: $space_m;
         margin-left: $space_m;
+    }
+    &__msgContainer {
+        display: flex;
+        align-items: center;
+    }
+    &__name {
+        margin-bottom: $space_m;
+    }
+    &__comment{
+        color: $font-color_default;
+    }
+    &__img{
+        width: 15%;
+        border-radius: 50%;
+        margin-right: $space_l;
     }
 }

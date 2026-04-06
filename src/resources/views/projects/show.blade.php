@@ -60,7 +60,13 @@
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
     <div class="p-detailProject__form">
         @foreach($comments as $comment)
-        <p>{{ $comment->comment }}</p>
+        <div class="p-detailProject__msgContainer">
+            <img src="{{ $comment->user->image ? asset('storage/img/' . $user->image) : asset('img/person.jpg') }}" class="p-detailProject__img" alt="プロフィール画像">
+            <div class="p-detailProject__msg">
+                <p class="p-detailProject__name">{{ $comment->user->nickname }}</p>
+                <p class="p-detailProject__comment">{{ $comment->comment }}</p>
+            </div>
+        </div>
         @endforeach
     </div>
     <h3 class="p-detailProject__title--msg">メッセージを送る</h3>
