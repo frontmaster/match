@@ -32,7 +32,8 @@
             </div>
         </div>
         @if($project->project_type === 'single')
-        <div id="" class="">
+        <div id="" class="p-detailProject__itemContainer">
+
             <div class="p-detailProject__item--projectType">
                 <div class="p-detailProject__labelContainer">
                     <label for="price" class="p-detailProject__label" class="p-detailProject__input">金額</label>
@@ -45,6 +46,7 @@
                     <span>千円</span>
                 </div>
             </div>
+
         </div>
         @endif
 
