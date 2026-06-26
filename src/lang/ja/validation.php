@@ -262,6 +262,7 @@ return [
         'project_title' => '案件名',
         'project_type' => '案件種別',
         'nickname' => 'ニックネーム',
+        'comment' => 'メッセージ',
     ],
 
 ];

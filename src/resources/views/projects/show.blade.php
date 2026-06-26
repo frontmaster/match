@@ -75,7 +75,7 @@
     <form method="POST" action="{{ route('comments.store', $project) }}" class="p-detailProject__form">
         @csrf
         @error('comment')
-        <p style="color:red">{{ $message }}</p>
+        <p class="c-errMsg">{{ $message }}</p>
         @enderror
         <textarea name="comment" id="" class="p-detailProject__textarea--msg"></textarea>
         <button type="submit" class="c-btn">送信</button>
