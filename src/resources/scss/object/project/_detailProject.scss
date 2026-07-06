@@ -34,6 +34,19 @@
         &--modal {
             margin-top: 50px;
         }
+        &--msg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 2px 8px $shadow;
+            border-radius: 25px;
+            padding: $space_3l;
+            box-sizing: border-box;
+            margin-bottom: 100px;
+            width: 100%;
+            height: 100px;
+        }
     }
     &__itemContainer {
         display: flex;
@@ -98,9 +111,11 @@
         width: 450px;
         &--msg {
             width: 450px;
-            height: 200px;
+            height: 100px;
             margin-bottom: $space_xxl;
             margin-top: $space_xl;
+            border: 1px solid $shadow;
+            border-radius: 5px;
         }
     }
     &__errMsg {
@@ -184,12 +199,15 @@
     &__name {
         margin-bottom: $space_m;
     }
-    &__comment{
+    &__comment {
         color: $font-color_default;
     }
-    &__img{
-        width: 15%;
+    &__img {
+        width: 10%;
         border-radius: 50%;
         margin-right: $space_l;
+    }
+    &__btn{
+        width: 450px;
     }
 }

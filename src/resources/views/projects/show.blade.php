@@ -60,7 +60,7 @@
         </div>
     </div>
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
-    <div class="p-detailProject__form">
+    <div class="p-detailProject__form--msg">
         @foreach($comments as $comment)
         <div class="p-detailProject__msgContainer">
             <img src="{{ $comment->user->image ? asset('storage/img/' . $user->image) : asset('img/person.jpg') }}" class="p-detailProject__img" alt="プロフィール画像">
@@ -78,7 +78,7 @@
         <p class="c-errMsg">{{ $message }}</p>
         @enderror
         <textarea name="comment" id="" class="p-detailProject__textarea--msg"></textarea>
-        <button type="submit" class="c-btn">送信</button>
+        <button type="submit" class="c-btn p-detailProject__btn">送信</button>
     </form>
 </div>
 @endsection
