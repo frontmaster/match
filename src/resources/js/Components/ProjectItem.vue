@@ -23,7 +23,7 @@
       <dt class="p-mypage__itemTitle">内容</dt>
       <dd>{{ project.content }}</dd>
     </dl>
-    <a :href="`/projects/${project.id}`">詳細</a>
+    <a :href="`/projects/${project.id}`" class="c-btn p-mypage__btn">詳細を見る</a>
   </div>
 </template>
 

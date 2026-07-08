@@ -1,33 +1,31 @@
 @use "../../foundation/variables" as *;
-.p-mypage{
+.p-mypage {
     display: flex;
-    justify-content:flex-start;
-    
-    
-    &__sidebarContainer{
-       margin-left: $space_3l;
+    justify-content: flex-start;
+
+    &__sidebarContainer {
+        margin-left: $space_3l;
     }
-    &__title{
+    &__title {
         font-size: $font-size_xxl;
         color: $main-color;
         margin-bottom: $space_xxl;
         text-align: center;
     }
-    &__subTitle{
+    &__subTitle {
         font-size: $font-size_xl;
         color: $main-color;
         margin-bottom: $space_l;
         text-align: center;
     }
-    &__listContainer{
-        
+    &__listContainer {
         padding: $space_l;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    &__projectList{
+    &__projectList {
         display: flex;
         flex-direction: column;
         margin-bottom: $space_xl;
@@ -35,20 +33,30 @@
         box-sizing: border-box;
         border-radius: $space_l;
         box-shadow: 0 4px 12px $shadow;
-        
     }
-    &__itemContainer{
+    &__itemContainer {
         display: flex;
         flex-direction: column;
         margin-bottom: $space_l;
         width: 450px;
     }
-    &__item{
-        display: flex;        
+    &__item {
+        display: flex;
     }
-    &__itemTitle{
+    &__itemTitle {
         color: $main-color;
         margin-bottom: $space_m;
         width: 120px;
+    }
+    &__btn {
+        width: 120px;
+        height: 30px;
+        padding: $space_s;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size_m;
+        text-decoration: none;
     }
 }
