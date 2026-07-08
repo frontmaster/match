@@ -3,11 +3,20 @@ import "./bootstrap";
 import Alpine from "alpinejs";
 import { createApp } from "vue";
 import Mypage from "./Pages/Mypage.vue";
+import MyProjectsPage from "./Pages/MyProjectsPage.vue";
 
 const appElement = document.getElementById("app");
 
 if (appElement) {
-    createApp(Mypage).mount("#app");
+    const page = appElement.dataset.page;
+
+    if (page === "mypage") {
+        createApp(Mypage).mount("#app");
+    }
+
+    if (page === "projects") {
+        createApp(MyProjectsPage).mount("#app");
+    }
 }
 
 window.Alpine = Alpine;
@@ -46,7 +55,6 @@ $(function () {
         $(".js-show-modal-cover").hide();
     });
 });
-
 
 //モーダルから送信
 document.addEventListener("DOMContentLoaded", function () {

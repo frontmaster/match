@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectService
 {
@@ -19,5 +20,12 @@ class ProjectService
         }
 
         return Project::create($data);
+    }
+
+    public function getUserProjects()
+    {
+        return Project::where('user_id', Auth::id())
+            ->latest()
+            ->get();
     }
 }

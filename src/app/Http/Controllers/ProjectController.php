@@ -36,4 +36,11 @@ class ProjectController extends Controller
         $comments = $project->comments()->with('user')->latest()->get();
         return view('projects.show', compact('project', 'comments'));
     }
+
+    public function index()
+    {
+        $projects = $this->projectService->getUserProjects();
+
+        return view('projects.list', compact('projects'));
+    }
 }

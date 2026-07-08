@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'マイページ')
-
-@section('body-class', 'is-mypage')
+@section('title', '登録案件一覧')
 
 @section('content')
 <div class="p-mypage">
@@ -16,7 +14,7 @@
             {{ session('success') }}
         </div>
         @endif
-        <div id="app" data-page="mypage">
+        <div id="app" data-page="projects">
 
         </div>
     </div>
