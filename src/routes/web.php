@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/projects/{project}/comments', [ProjectCommentController::class, 'store'])->name('comments.store');
     Route::get('/mypage/projects', function () {
         return view('projects.list');
-    })->name('projects.index');
+    })->name('projects.list');
 });
 
 require __DIR__ . '/auth.php';

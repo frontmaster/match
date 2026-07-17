@@ -1,9 +1,10 @@
 <template>
   <div>
-    <RegisteredProjectList />
+    <h1>アイディア一覧</h1>
+    <ProjectItem apiUrl="/api/projects" />
   </div>
 </template>
 
 <script setup>
-import RegisteredProjectList from "../Components/RegisteredProjectList.vue";
+import ProjectItem from "../Components/AllProjectList.vue";
 </script>

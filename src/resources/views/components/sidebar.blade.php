@@ -3,7 +3,7 @@
         <div class="c-sidebar__menublock">
             <h3 class="c-sidebar__menu--title">アイディアを購入したい方</h3>
             <li class="c-sidebar__menu">
-                <a href="" class="c-sidebar__menu--link">アイディア一覧から探す</a>
+                <a href="{{ route('projects.index') }}" class="c-sidebar__menu--link">アイディア一覧から探す</a>
             </li>
             <li class="c-sidebar__menu">
                 <a href="" class="c-sidebar__menu--link">レビュー一覧から探す</a>
