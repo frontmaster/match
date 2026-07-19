@@ -35,9 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('projects', ProjectController::class);
     Route::resource('profiles', ProfController::class);
     Route::post('/projects/{project}/comments', [ProjectCommentController::class, 'store'])->name('comments.store');
+    Route::get('/projects', function () {
+        return view('mypages.index'); 
+    })->name('projects.index');
     Route::get('/mypage/projects', function () {
         return view('projects.list');
-    })->name('projects.list');
+    })->name('mypage.projects');
 });
 
 require __DIR__ . '/auth.php';

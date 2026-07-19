@@ -14,7 +14,7 @@
             {{ session('success') }}
         </div>
         @endif
-        <div id="app" data-page="projects">
+        <div id="app" data-page="mypage-projects">
 
         </div>
     </div>

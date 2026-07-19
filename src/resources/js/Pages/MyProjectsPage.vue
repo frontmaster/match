@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>アイディア一覧</h1>
+    
     <ProjectItem apiUrl="/api/projects" />
   </div>
 </template>

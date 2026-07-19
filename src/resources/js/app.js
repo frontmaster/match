@@ -2,20 +2,20 @@ import "./bootstrap";
 
 import Alpine from "alpinejs";
 import { createApp } from "vue";
-import Mypage from "./Pages/Mypage.vue";
-import MyProjectsPage from "./Pages/MyProjectsPage.vue";
+import RegisteredProjectList from "./Components/RegisteredProjectList.vue";
+import AllProjectList from "./Components/AllProjectList.vue";
 
 const appElement = document.getElementById("app");
 
 if (appElement) {
     const page = appElement.dataset.page;
 
-    if (page === "mypage") {
-        createApp(Mypage).mount("#app");
+    if (page === "mypage-projects") {
+        createApp(RegisteredProjectList).mount("#app");
     }
 
     if (page === "projects") {
-        createApp(MyProjectsPage).mount("#app");
+        createApp(AllProjectList).mount("#app");
     }
 }
 
