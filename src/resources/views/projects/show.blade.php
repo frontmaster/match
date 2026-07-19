@@ -61,6 +61,9 @@
     </div>
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
     <div class="p-detailProject__form--msg">
+        @if($comments->isEmpty())
+        <p>まだメッセージはありません</p>
+        @else
         @foreach($comments as $comment)
         <div class="p-detailProject__msgContainer">
             <img src="{{ $comment->user->image ? asset('storage/img/' . $user->image) : asset('img/person.jpg') }}" class="p-detailProject__img" alt="プロフィール画像">
@@ -70,6 +73,7 @@
             </div>
         </div>
         @endforeach
+        @endif
     </div>
     <h3 class="p-detailProject__title--msg">メッセージを送る</h3>
     <form method="POST" action="{{ route('comments.store', $project) }}" class="p-detailProject__form">
