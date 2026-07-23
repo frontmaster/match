@@ -42,4 +42,9 @@ class ProjectController extends Controller
         
         return view('projects.list');
     }
+
+    public function apply()
+    {
+        $this->projectService->applyProject();
+    }
 }

@@ -58,6 +58,9 @@
                 <div name="content" id="content" class="p-detailProject__textarea">{{ $project->content }}</div>
             </div>
         </div>
+        @if($project->user_id !== Auth::id())
+        <button type="submit" class="c-btn p-detailProject__btn">応募する</button>
+        @endif
     </div>
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
     <div class="p-detailProject__form--msg">
