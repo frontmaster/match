@@ -29,11 +29,4 @@ class ProjectService
             ->latest()
             ->get();
     }
-
-    public function applyProject()
-    {
-        $data['apply_user_id'] = auth()->id();
-
-        return ApplyProject::create($data);
-    }
 }

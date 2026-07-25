@@ -3,6 +3,7 @@
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ApplyProjectController;
 use App\Http\Controllers\ProfController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProjectCommentController;
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('projects', ProjectController::class);
     Route::resource('profiles', ProfController::class);
     Route::post('/projects/{project}/comments', [ProjectCommentController::class, 'store'])->name('comments.store');
+    Route::post('/projects/{project}', [ApplyProjectController::class, 'store'])->name('applyProjects.store');
     Route::get('/projects', function () {
         return view('mypages.index'); 
     })->name('projects.index');

@@ -4,6 +4,11 @@
 
 @section('content')
 <h2 class="p-detailProject__title">案件詳細</h2>
+@if(session('success'))
+<div class="c-success">
+    {{ session('success') }}
+</div>
+@endif
 <div class="p-detailProject__formContainer">
     <div class="p-detailProject__form">
         @csrf
@@ -59,7 +64,10 @@
             </div>
         </div>
         @if($project->user_id !== Auth::id())
-        <button type="submit" class="c-btn p-detailProject__btn">応募する</button>
+        <form method="POST" action="{{ route('applyProjects.store', $project) }}">
+            @csrf
+            <button type="submit" class="c-btn p-detailProject__btn">応募する</button>
+        </form>
         @endif
     </div>
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>

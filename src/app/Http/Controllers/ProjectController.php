@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProjectRequest;
 use App\Services\ProjectService;
 use App\Models\Project;
+use App\Models\ApplyProject;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -31,20 +32,15 @@ class ProjectController extends Controller
         return redirect()->route('projects.create')->with('success', '案件を登録しました');
     }
 
-    public function show(Project $project)
+    public function show(Project $project, ApplyProject $applyProject)
     {
         $comments = $project->comments()->with('user')->latest()->get();
-        return view('projects.show', compact('project', 'comments'));
+        return view('projects.show', compact('project', 'comments', 'applyProject'));
     }
 
     public function index()
     {
         
         return view('projects.list');
-    }
-
-    public function apply()
-    {
-        $this->projectService->applyProject();
     }
 }

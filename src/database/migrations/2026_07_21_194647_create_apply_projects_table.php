@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('content');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('apply_user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('project_id')->constrained('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }
