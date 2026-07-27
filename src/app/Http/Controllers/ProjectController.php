@@ -38,7 +38,8 @@ class ProjectController extends Controller
     {
         $comments = $project->comments()->with('user')->latest()->get();
         $applyProject = ApplyProject::where('project_id', $project->id)->where('apply_user_id', Auth::id())->first();
-        return view('projects.show', compact('project', 'comments', 'applyProject'));
+        $postProject = Project::where('id', $project->id)->where('user_id', Auth::id())->first();
+        return view('projects.show', compact('project', 'comments', 'applyProject', 'postProject'));
     }
 
     public function index()
