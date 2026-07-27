@@ -63,11 +63,13 @@
                 <div name="content" id="content" class="p-detailProject__textarea">{{ $project->content }}</div>
             </div>
         </div>
-        @if($project->user_id !== Auth::id())
+        @if(!$applyProject && $project->user_id !== Auth::id())
         <form method="POST" action="{{ route('applyProjects.store', $project) }}">
             @csrf
             <button type="submit" class="c-btn p-detailProject__btn">応募する</button>
         </form>
+        @else
+        <button type="submit" class="c-btn p-detailProject__btn--disable">応募済みです</button>
         @endif
     </div>
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>

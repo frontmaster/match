@@ -207,7 +207,15 @@
         border-radius: 50%;
         margin-right: $space_l;
     }
-    &__btn{
+    &__btn {
         width: 450px;
+        &--disable {
+            background-color: $shadow;
+            border: 1px solid $shadow;
+            opacity:1;
+            &:hover {
+                cursor: default;
+            }
+        }
     }
 }
