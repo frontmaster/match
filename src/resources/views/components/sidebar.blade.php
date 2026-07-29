@@ -26,7 +26,7 @@
                 <a href="{{ route('mypage.projects') }}" class="c-sidebar__menu--link">登録した案件一覧</a>
             </li>
             <li class="c-sidebar__menu--mid">
-                <a href="" class="c-sidebar__menu--link">応募した案件一覧</a>
+                <a href="{{ route('applyProjects') }}" class="c-sidebar__menu--link">応募した案件一覧</a>
             </li>
         </div>
 

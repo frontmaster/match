@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage/projects', function () {
         return view('projects.list');
     })->name('mypage.projects');
+    Route::get('/apply_projects', function () {
+        return view('applyProjects.list');
+    })->name('applyProjects');
 });
 
 require __DIR__ . '/auth.php';

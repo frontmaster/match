@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\ApplyProject;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -21,6 +22,14 @@ class ProjectController extends Controller
     {
         return response()->json(
             Project::where('user_id', Auth::id())->latest()->get()
+        );
+    }
+
+    // 自分の応募した案件
+    public function myApplyProjects()
+    {
+        return response()->json(
+            ApplyProject::where('apply_user_id', Auth::id())->latest()->get()
         );
     }
 }

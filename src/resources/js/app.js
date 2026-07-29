@@ -4,6 +4,7 @@ import Alpine from "alpinejs";
 import { createApp } from "vue";
 import RegisteredProjectList from "./Components/RegisteredProjectList.vue";
 import AllProjectList from "./Components/AllProjectList.vue";
+import ApplyProjectList from "./Components/ApplyProjectList.vue";
 
 const appElement = document.getElementById("app");
 
@@ -16,6 +17,10 @@ if (appElement) {
 
     if (page === "projects") {
         createApp(AllProjectList).mount("#app");
+    }
+
+    if (page === "apply-projects") {
+        createApp(ApplyProjectList).mount("#app");
     }
 }
 

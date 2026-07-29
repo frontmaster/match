@@ -23,7 +23,8 @@
       <dt class="p-mypage__itemTitle">内容</dt>
       <dd>{{ project.content }}</dd>
     </dl>
-    <a :href="`/projects/${project.id}`" class="c-btn p-mypage__btn">詳細を見る</a>
+    <a :href="`/projects/${project.project_id}`" v-if="page === 'apply-projects'" class="c-btn p-mypage__btn">詳細を見る</a>
+    <a :href="`/projects/${project.id}`" v-else-if="page !== 'apply-projects'" class="c-btn p-mypage__btn">詳細を見る</a>
   </div>
 </template>
 
@@ -34,4 +35,6 @@ defineProps({
     required: true,
   },
 });
+const appElement = document.getElementById("app");
+const page = appElement.dataset.page;
 </script>
