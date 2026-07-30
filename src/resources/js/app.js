@@ -64,7 +64,7 @@ $(function () {
 //モーダルから送信
 document.addEventListener("DOMContentLoaded", function () {
     const submitBtn = document.querySelector(".js-submit-main-form");
-    const form = document.querySelector(".p-createProject__form");
+    const form = document.querySelector(".c-modal__form");
 
     if (submitBtn && form) {
         submitBtn.addEventListener("click", function () {

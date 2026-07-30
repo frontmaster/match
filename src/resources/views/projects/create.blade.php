@@ -3,18 +3,18 @@
 @section('title', '案件登録ページ')
 
 @section('content')
-<div class="p-createProject__modal--cover js-show-modal-cover">
-    <div class="p-createProject__modal js-show-modal-target">
-        <p class="p-createProject__sentence--modal">
+<div class="c-modal__cover js-show-modal-cover">
+    <div class="c-modal js-show-modal-target">
+        <p class="c-modal__sentence">
             案件を登録しますか？
         </p>
 
-        <div class="p-createProject__btn--modal">
-            <button class="p-createProject__modalClose js-hide-modal">×</button>
-            <button type="button" class="c-btn p-createProject__btn--cancel js-hide-modal">
+        <div class="c-modal__btn">
+            <button class="c-modal__close js-hide-modal">×</button>
+            <button type="button" class="c-btn c-modal__cancel js-hide-modal">
                 キャンセル
             </button>
-            <button type="button" class="c-btn p-createProject__btn--buy js-submit-main-form">
+            <button type="button" class="c-btn c-modal__confirm js-submit-main-form">
                 登録
             </button>
         </div>
@@ -28,7 +28,7 @@
 </div>
 @endif
 <div class="p-createProject__formContainer">
-    <form method="POST" action="{{ route('projects.store') }}" class="p-createProject__form">
+    <form method="POST" action="{{ route('projects.store') }}" class="p-createProject__form c-modal__form">
         @csrf
         <div class="p-createProject__itemContainer">
             <div class="p-createProject__item">

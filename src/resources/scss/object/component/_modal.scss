@@ -1,0 +1,50 @@
+@use "../../foundation/variables" as *;
+.c-modal {
+    width: 400px;
+    height: 200px;
+    background-color: $white;
+    padding: $space_l;
+    box-sizing: border-box;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    &__cover {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    &__sentence {
+        text-align: center;
+        margin-bottom: $space_3l;
+    }
+    &__btn {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: $font-size_xxl;
+        cursor: pointer;
+    }
+    &__cancel {
+        background-color: $alert-color;
+        border: $alert-color;
+        width: 40%;
+        height: 50px;
+    }
+    &__confirm {
+        width: 40%;
+        height: 50px;
+    }
+}

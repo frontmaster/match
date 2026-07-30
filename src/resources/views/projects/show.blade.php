@@ -3,6 +3,23 @@
 @section('title', '案件詳細ページ')
 
 @section('content')
+<div class="c-modal__cover js-show-modal-cover">
+    <div class="c-modal js-show-modal-target">
+        <p class="c-modal__sentence">
+            案件に応募しますか？
+        </p>
+
+        <div class="c-modal__btn">
+            <button class="c-modal__close js-hide-modal">×</button>
+            <button type="button" class="c-btn c-modal__cancel js-hide-modal">
+                キャンセル
+            </button>
+            <button type="button" class="c-btn c-modal__confirm js-submit-main-form">
+                応募
+            </button>
+        </div>
+    </div>
+</div>
 <h2 class="p-detailProject__title">案件詳細</h2>
 @if(session('success'))
 <div class="c-success">
@@ -64,9 +81,9 @@
             </div>
         </div>
         @if(!$applyProject && !$postProject)
-        <form method="POST" action="{{ route('applyProjects.store', $project) }}">
+        <form method="POST" action="{{ route('applyProjects.store', $project) }}" class="c-modal__form">
             @csrf
-            <button type="submit" class="c-btn p-detailProject__btn">応募する</button>
+            <button type="button" class="c-btn p-detailProject__btn js-show-modal">応募する</button>
         </form>
         @elseif($applyProject)
         <button type="submit" class="c-btn p-detailProject__btn--disable">応募済みです</button>
