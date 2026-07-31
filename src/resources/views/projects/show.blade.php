@@ -87,6 +87,8 @@
         </form>
         @elseif($applyProject)
         <button type="submit" class="c-btn p-detailProject__btn--disable">応募済みです</button>
+        @elseif($postProject)
+        <button type="submit" class="c-btn p-detailProject__btn--disable">自分が登録した案件には応募できません</button>
         @endif
     </div>
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
