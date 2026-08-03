@@ -195,12 +195,75 @@
     &__msgContainer {
         display: flex;
         align-items: center;
+        width: 100%;
+        &--author {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            float: right;
+            margin-right: 20px;
+            background: #ffffff;
+        }
+    }
+    &__msg {
+        display: grid;
+        display: flex;
+        align-items: center;
+        gap: 0 15px;
+        &--author {
+            display: grid;
+            display: flex;
+            align-items: center;
+            gap: 0 15px;
+        }
     }
     &__name {
         margin-bottom: $space_m;
     }
     &__comment {
         color: $font-color_default;
+        display: inline-block;
+        position: relative;
+        max-width: 80%;
+        margin: 0;
+        padding: 0.4em 0.8em;
+        border-radius: 20px;
+        color: #333;
+        font-size: 0.9em;
+        background-color: $shadow;
+        &:before {
+            position: absolute;
+            top: -15px;
+            width: 20px;
+            height: 30px;
+            content: "";
+            left: -10px;
+            border-radius: 0 0 0 15px;
+            box-shadow: -3px -15px 0 -7px $shadow inset;
+        }
+        &--author {
+            display: inline-block;
+            position: relative;
+            max-width: 80%;
+            margin: 0;
+            padding: 0.4em 0.8em;
+            border-radius: 20px;
+            color: #333;
+            font-size: 0.9em;
+            background-color: #30e852;
+            margin: 0 10px 0 auto;
+            &:before {
+                position: absolute;
+                top: -15px;
+                width: 20px;
+                height: 30px;
+                content: "";
+                right: -10px;
+                border-radius: 0 0 15px 0;
+                box-shadow: 3px -15px 0 -7px #30e852 inset;
+            }
+        }
     }
     &__img {
         width: 10%;
@@ -212,7 +275,7 @@
         &--disable {
             background-color: $shadow;
             border: 1px solid $shadow;
-            opacity:1;
+            opacity: 1;
             &:hover {
                 cursor: default;
             }

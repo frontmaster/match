@@ -97,6 +97,13 @@
         <p>まだメッセージはありません</p>
         @else
         @foreach($comments as $comment)
+        @if($comment->user_id === Auth::id())
+        <div class="p-detailProject__msgContainer--author">
+            <div class="p-detailProject__msg--author">
+                <p class="p-detailProject__comment--author">{{ $comment->comment }}</p>
+            </div>
+        </div>
+        @else
         <div class="p-detailProject__msgContainer">
             <img src="{{ $comment->user->image ? asset('storage/img/' . $user->image) : asset('img/person.jpg') }}" class="p-detailProject__img" alt="プロフィール画像">
             <div class="p-detailProject__msg">
@@ -104,6 +111,7 @@
                 <p class="p-detailProject__comment">{{ $comment->comment }}</p>
             </div>
         </div>
+        @endif
         @endforeach
         @endif
     </div>
