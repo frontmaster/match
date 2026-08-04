@@ -19,6 +19,8 @@
         justify-content: center;
         flex-direction: column;
         margin-bottom: $space_3l;
+        width: 700px;
+        align-items: center;
     }
     &__form {
         display: flex;
@@ -37,7 +39,7 @@
         &--msg {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
             flex-direction: column-reverse;
             box-shadow: 0 2px 8px $shadow;
             border-radius: 25px;
@@ -208,10 +210,10 @@
         }
     }
     &__msg {
-        display: grid;
         display: flex;
         flex-direction: column;
-        gap: 0 15px;
+        min-width: 0;
+        flex: 1;
         &--author {
             display: grid;
             display: flex;
@@ -229,7 +231,7 @@
         display: inline-block;
         position: relative;
         max-width: 80%;
-        word-break: break-all;
+        word-break: break-word;
         margin: 0;
         padding: 0.4em 0.8em;
         border-radius: 20px;
@@ -250,7 +252,7 @@
             display: inline-block;
             position: relative;
             max-width: 80%;
-            word-break: break-all;
+            word-break: break-word;
             margin: 0;
             padding: 0.4em 0.8em;
             border-radius: 20px;
@@ -286,4 +288,8 @@
             }
         }
     }
+&__emptyMsg{
+    display: flex;
+    justify-content: center;
+}
 }

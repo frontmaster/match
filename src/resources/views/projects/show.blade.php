@@ -94,7 +94,7 @@
     <h3 class="p-detailProject__title--msg">メッセージ一覧</h3>
     <div class="p-detailProject__form--msg">
         @if($comments->isEmpty())
-        <p>まだメッセージはありません</p>
+        <p class="p-detailProject__emptyMsg">まだメッセージはありません</p>
         @else
         @foreach($comments as $comment)
         @if($comment->user_id === Auth::id())
