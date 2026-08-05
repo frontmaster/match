@@ -196,7 +196,7 @@
     &__msgContainer {
         display: flex;
         align-items: flex-start;
-        margin-bottom: $space_m;
+        margin-bottom: $space_xxl;
         width: 100%;
         &--author {
             display: flex;
@@ -233,7 +233,7 @@
         max-width: 80%;
         word-break: break-word;
         margin: 0;
-        padding: 0.4em 0.8em;
+        padding: $space_xl;
         border-radius: 20px;
         color: #333;
         font-size: 0.9em;
@@ -254,7 +254,7 @@
             max-width: 80%;
             word-break: break-word;
             margin: 0;
-            padding: 0.4em 0.8em;
+            padding: $space_xl;
             border-radius: 20px;
             color: #333;
             font-size: 0.9em;
