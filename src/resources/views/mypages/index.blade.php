@@ -11,12 +11,13 @@
         @endcomponent
     </div>
     <div class="p-mypage__content">
+        <h1>マイページ</h1>
         @if(session('success'))
         <div id="success-message" class="c-success">
             {{ session('success') }}
         </div>
         @endif
-        <div id="app" data-page="projects">
+        <div id="app" data-page="mypage-projects">
 
         </div>
     </div>

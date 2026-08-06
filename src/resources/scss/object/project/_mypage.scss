@@ -6,6 +6,10 @@
     &__sidebarContainer {
         margin-left: $space_3l;
     }
+    &__projectListContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
     &__title {
         font-size: $font-size_xxl;
         color: $main-color;
@@ -33,6 +37,7 @@
         box-sizing: border-box;
         border-radius: $space_l;
         box-shadow: 0 4px 12px $shadow;
+        width: 25%;
     }
     &__itemContainer {
         display: flex;
