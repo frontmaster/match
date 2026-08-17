@@ -10,6 +10,12 @@
         display: flex;
         flex-wrap: wrap;
     }
+    &__registeredContainer{
+        border: 1px solid $main-color;
+        padding: $space_xl;
+        box-sizing: border-box;
+        border-radius: 10px
+    }
     &__title {
         font-size: $font-size_xxl;
         color: $main-color;
@@ -20,7 +26,6 @@
         font-size: $font-size_xl;
         color: $main-color;
         margin-bottom: $space_l;
-        text-align: center;
     }
     &__listContainer {
         padding: $space_l;
@@ -38,6 +43,7 @@
         border-radius: $space_l;
         box-shadow: 0 4px 12px $shadow;
         width: 25%;
+        margin-right: $space_xl;
     }
     &__itemContainer {
         display: flex;

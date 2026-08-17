@@ -1,5 +1,5 @@
 <template>
-  <div class="p-mypage__registered">
+  <div class="p-mypage__registeredContainer">
     <h2 class="p-mypage__subTitle">登録済み案件一覧</h2>
     <div class="p-mypage__projectListContainer">
       <div v-if="loading">読み込み中...</div>
