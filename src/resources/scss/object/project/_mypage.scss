@@ -9,12 +9,17 @@
     &__projectListContainer{
         display: flex;
         flex-wrap: wrap;
+        gap:$space_xl;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
     }
     &__registeredContainer{
         border: 1px solid $main-color;
         padding: $space_xl;
         box-sizing: border-box;
-        border-radius: 10px
+        border-radius: 10px;
+        margin-right: $space_3l;
     }
     &__title {
         font-size: $font-size_xxl;
@@ -43,7 +48,7 @@
         border-radius: $space_l;
         box-shadow: 0 4px 12px $shadow;
         width: 25%;
-        margin-right: $space_xl;
+        margin-right: $space_3l;
     }
     &__itemContainer {
         display: flex;
