@@ -1,19 +1,15 @@
 <template>
-  <div class="p-mypage__registered">
+  <div class="p-mypage__registeredContainer">
     <h2 class="p-mypage__subTitle">案件一覧</h2>
+    <div class="p-mypage__projectListContainer">
+      <div v-if="loading">読み込み中...</div>
 
-    <div v-if="loading">読み込み中...</div>
+      <div v-else-if="projects.length === 0">
+        案件はまだありません
+      </div>
 
-    <div v-else-if="projects.length === 0">
-      案件はまだありません
+      <ProjectItem v-else v-for="project in projects" :key="project.id" :project="project" />
     </div>
-
-    <ProjectItem
-      v-else
-      v-for="project in projects"
-      :key="project.id"
-      :project="project"
-    />
   </div>
 </template>
 
@@ -30,7 +26,7 @@ onMounted(async () => {
     const res = await axios.get("/api/projects");
     projects.value = res.data;
   } catch (error) {
-    console.error("登録済み案件の取得に失敗しました", error);
+    console.error("案件の取得に失敗しました", error);
   } finally {
     loading.value = false;
   }

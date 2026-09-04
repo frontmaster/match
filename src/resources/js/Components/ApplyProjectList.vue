@@ -1,19 +1,14 @@
 <template>
-  <div class="p-mypage__registered">
+  <div class="p-mypage__appliedContainer">
     <h2 class="p-mypage__subTitle">応募済み案件一覧</h2>
+    <div class="p-mypage__projectListContainer">
+      <div v-if="loading">読み込み中...</div>
+      <div v-else-if="projects.length === 0">
+        応募済みの案件はありません
+      </div>
 
-    <div v-if="loading">読み込み中...</div>
-
-    <div v-else-if="projects.length === 0">
-      応募済みの案件はありません
+      <ProjectItem v-else v-for="project in projects" :key="project.id" :project="project" />
     </div>
-
-    <ProjectItem
-      v-else
-      v-for="project in projects"
-      :key="project.id"
-      :project="project"
-    />
   </div>
 </template>
 
