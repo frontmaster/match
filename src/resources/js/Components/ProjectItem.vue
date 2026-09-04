@@ -11,9 +11,10 @@
           {{ project.project_type === "single" ? "単発" : "レベニューシェア" }}
         </dd>
       </dl>
-      <dl v-if="project.project_type === 'single'" class="p-mypage__itemContainer">
+      <dl class="p-mypage__itemContainer">
         <dt class="p-mypage__itemTitle">価格</dt>
-        <dd>{{ project.price_min }}〜{{ project.price_max }} 千円</dd>
+        <dd v-if="project.project_type === 'single'">{{ project.price_min }}〜{{ project.price_max }} 千円</dd>
+        <dd v-else>レベニューシェア</dd>
       </dl>
 
       <dl class="p-mypage__itemContainer">
