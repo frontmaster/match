@@ -7,14 +7,9 @@
         margin-left: $space_3l;
     }
     &__projectListContainer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: $space_xl;
-        width: 90%;
-        margin: 0 auto;
+        
     }
     &__registeredContainer {
-        border: 1px solid $main-color;
         padding: $space_xl;
         box-sizing: border-box;
         border-radius: 10px;
@@ -55,8 +50,7 @@
         box-sizing: border-box;
         border-radius: $space_l;
         box-shadow: 0 4px 12px $shadow;
-        width: calc((100% - 2 * $space_xl) / 3);
-        
+        width: 70%;
     }
     &__itemContainer {
         display: flex;
